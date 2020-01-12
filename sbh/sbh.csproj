@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+        <ProjectGuid>{9D927930-1E2A-4C04-A7E3-9F84566E0B0C}</ProjectGuid>
+        <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+        <TemplateGuid>{edc1b0fa-90cd-4038-8fad-98fe74adb368}</TemplateGuid>
+        <OutputType>Exe</OutputType>
+        <RootNamespace>sbh</RootNamespace>
+        <AssemblyName>sbh</AssemblyName>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchLink>SdkOnly</MtouchLink>
+        <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+        <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
+        <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+        <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+        <DefineConstants>DEBUG</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <MtouchArch>x86_64</MtouchArch>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchLink>SdkOnly</MtouchLink>
+        <MtouchDebug>true</MtouchDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+        <DebugType>none</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <MtouchArch>x86_64</MtouchArch>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <DeviceSpecificBuild></DeviceSpecificBuild>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\iPhone\Debug</OutputPath>
+        <DefineConstants>DEBUG</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchLink>None</MtouchLink>
+        <WarningLevel>4</WarningLevel>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchLink>SdkOnly</MtouchLink>
+        <MtouchArch>ARM64</MtouchArch>
+        <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+        <CodesignKey>iPhone Developer</CodesignKey>
+        <MtouchDebug>true</MtouchDebug>
+<MtouchExtraArgs>--optimize=-remove-dynamic-registrar</MtouchExtraArgs>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+        <DebugType>none</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\iPhone\Release</OutputPath>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchLink>SdkOnly</MtouchLink>
+        <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+        <MtouchArch>ARM64</MtouchArch>
+        <CodesignKey>iPhone Developer</CodesignKey>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="System" />
+        <Reference Include="System.Xml" />
+        <Reference Include="System.Core" />
+        <Reference Include="Xamarin.iOS" />
+        <Reference Include="System.Numerics" />
+        <Reference Include="System.Numerics.Vectors" />
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+      <PackageReference Include="WebP.Touch">
+        <Version>1.0.8</Version>
+      </PackageReference>
+    </ItemGroup>
+    <ItemGroup>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon1024.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon167.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon120.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon152.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon180.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon29.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon40.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon76.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon80.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon87.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png">
+            <Visible>false</Visible>
+        </ImageAsset>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon58-1.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon58.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="Resources\" />
+        <Folder Include="Storyboards\" />
+        <Folder Include="ViewControllers\" />
+        <Folder Include="CustomControls\" />
+        <Folder Include="Resources\Icons\" />
+        <Folder Include="Helpers\" />
+        <Folder Include="Classes\" />
+        <Folder Include="Classes\Enums\" />
+        <Folder Include="Resources\Images\" />
+        <Folder Include="Cells\" />
+    </ItemGroup>
+    <ItemGroup>
+        <InterfaceDefinition Include="LaunchScreen.storyboard" />
+        <InterfaceDefinition Include="Storyboards\Main.storyboard" />
+        <InterfaceDefinition Include="CustomControls\SideMenu.xib" />
+        <InterfaceDefinition Include="CustomControls\CustomTopBar.xib" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="Info.plist" />
+        <None Include="Entitlements.plist" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Main.cs" />
+        <Compile Include="AppDelegate.cs" />
+        <Compile Include="SceneDelegate.cs" />
+        <Compile Include="ViewControllers\MainVc.cs" />
+        <Compile Include="ViewControllers\MainVc.designer.cs">
+          <DependentUpon>MainVc.cs</DependentUpon>
+        </Compile>
+        <Compile Include="CustomControls\CustomTopBar.cs" />
+        <Compile Include="CustomControls\CustomTopBar.designer.cs">
+          <DependentUpon>CustomTopBar.cs</DependentUpon>
+        </Compile>
+        <Compile Include="CustomControls\SideMenu.cs" />
+        <Compile Include="CustomControls\SideMenu.designer.cs">
+          <DependentUpon>SideMenu.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Helpers\AppColors.cs" />
+        <Compile Include="Classes\Enums\PageName.cs" />
+        <Compile Include="Helpers\Stylization.cs" />
+        <Compile Include="Helpers\ViewTouchRecognizer.cs" />
+        <Compile Include="Helpers\Timer.cs" />
+        <Compile Include="ViewControllers\CuriositiesVc.cs" />
+        <Compile Include="ViewControllers\CuriositiesVc.designer.cs">
+          <DependentUpon>CuriositiesVc.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ViewControllers\AuthorVc.cs" />
+        <Compile Include="ViewControllers\AuthorVc.designer.cs">
+          <DependentUpon>AuthorVc.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ViewControllers\PhotosVc.cs" />
+        <Compile Include="ViewControllers\PhotosVc.designer.cs">
+          <DependentUpon>PhotosVc.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ViewControllers\MuseumVc.cs" />
+        <Compile Include="ViewControllers\MuseumVc.designer.cs">
+          <DependentUpon>MuseumVc.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Cells\MuseumItemCell.cs" />
+        <Compile Include="Cells\MuseumItemCell.designer.cs">
+          <DependentUpon>MuseumItemCell.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Cells\AuthorItemCell.cs" />
+        <Compile Include="Cells\AuthorItemCell.designer.cs">
+          <DependentUpon>AuthorItemCell.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Classes\Museum.cs" />
+        <Compile Include="Classes\Author.cs" />
+        <Compile Include="Cells\CuriosityItemCell.cs" />
+        <Compile Include="Cells\CuriosityItemCell.designer.cs">
+          <DependentUpon>CuriosityItemCell.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Classes\Curiosity.cs" />
+        <Compile Include="Cells\PhotoItemCell.cs" />
+        <Compile Include="Cells\PhotoItemCell.designer.cs">
+          <DependentUpon>PhotoItemCell.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Classes\Photo.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <BundleResource Include="Resources\Icons\icon-apps%402x.png" />
+      <BundleResource Include="Resources\Icons\icon-author%402x.png" />
+      <BundleResource Include="Resources\Icons\icon-author%403x.png" />
+      <BundleResource Include="Resources\Icons\icon-camera%402x.png" />
+      <BundleResource Include="Resources\Icons\icon-camera%403x.png" />
+      <BundleResource Include="Resources\Icons\icon-city%402x.png" />
+      <BundleResource Include="Resources\Icons\icon-city%403x.png" />
+      <BundleResource Include="Resources\Icons\icon-museum%402x.png" />
+      <BundleResource Include="Resources\Icons\icon-museum%403x.png" />
+      <BundleResource Include="Resources\Icons\icon-notes%402x.png" />
+      <BundleResource Include="Resources\Icons\icon-notes%403x.png" />
+      <BundleResource Include="Resources\Icons\image-herb.png" />
+      <BundleResource Include="Resources\Icons\icon-apps%403x.png" />
+      <BundleResource Include="Resources\Icons\icon-menu%402x.png" />
+      <BundleResource Include="Resources\Icons\icon-menu%403x.png" />
+      <BundleResource Include="Resources\Images\photo3.webp" />
+      <BundleResource Include="Resources\Images\photo4.webp" />
+      <BundleResource Include="Resources\Images\photo5.webp" />
+      <BundleResource Include="Resources\Images\photo6.webp" />
+      <BundleResource Include="Resources\Images\photo2.webp" />
+      <BundleResource Include="Resources\Images\photo1.webp" />
+      <BundleResource Include="Resources\Images\author.webp" />
+      <BundleResource Include="Resources\Images\developer-stan.webp" />
+      <BundleResource Include="Resources\Images\background.webp" />
+    </ItemGroup>
+    <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+</Project>
