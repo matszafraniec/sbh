@@ -19,6 +19,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/image-background" translatesAutoresizingMaskIntoConstraints="NO" id="3qG-gq-i2O" userLabel="ImageViewBackground">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/image-herb" translatesAutoresizingMaskIntoConstraints="NO" id="mLc-43-QrL">
                                 <rect key="frame" x="162" y="318" width="90" height="100"/>
                                 <constraints>
@@ -31,6 +34,10 @@
                         <constraints>
                             <constraint firstItem="mLc-43-QrL" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="HGT-L9-TNq"/>
                             <constraint firstItem="mLc-43-QrL" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="KqG-jY-nHZ"/>
+                            <constraint firstItem="3qG-gq-i2O" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="VHm-dB-Xu2"/>
+                            <constraint firstAttribute="trailing" secondItem="3qG-gq-i2O" secondAttribute="trailing" id="jFQ-aK-ww2"/>
+                            <constraint firstItem="3qG-gq-i2O" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="kQ8-sJ-g28"/>
+                            <constraint firstAttribute="bottom" secondItem="3qG-gq-i2O" secondAttribute="bottom" id="xau-H7-wjx"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -40,6 +47,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Icons/image-background" width="16" height="16"/>
         <image name="Icons/image-herb" width="16" height="16"/>
     </resources>
 </document>

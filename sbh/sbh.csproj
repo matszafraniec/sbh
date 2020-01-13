@@ -31,6 +31,7 @@
         <DeviceSpecificBuild>false</DeviceSpecificBuild>
         <MtouchFastDev>true</MtouchFastDev>
         <MtouchExtraArgs>--optimize=-remove-dynamic-registrar</MtouchExtraArgs>
+<CodesignKey>iPhone Developer</CodesignKey>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
         <DebugType>none</DebugType>
@@ -241,6 +242,7 @@
       <BundleResource Include="Resources\Images\author.webp" />
       <BundleResource Include="Resources\Images\developer-stan.webp" />
       <BundleResource Include="Resources\Images\background.webp" />
+      <BundleResource Include="Resources\Icons\image-background.png" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

@@ -5,6 +5,7 @@ using sbh.Helpers;
 using System;
 using System.ComponentModel;
 using UIKit;
+using WebP.Touch;
 
 namespace sbh.CustomControls
 {
@@ -34,33 +35,36 @@ namespace sbh.CustomControls
             RootView.Frame = new CGRect(0, 0, RootView.Frame.Width, Superview.Frame.Height);
             AddSubview(RootView);
 
+            var imageDecoder = new WebPCodec();
+            ImageViewBackground.Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/background", "webp"));
+
             ViewMenuHome.AddGestureRecognizer(new UITapGestureRecognizer((obj) =>
             {
-                ViewMenuHome.BackgroundColor = AppColors.LightGray;
+                ViewMenuHome.BackgroundColor = AppColors.DarkGray.ChangeAlpha(0.3f);
                 ViewMenuPhotos.BackgroundColor = ViewMenuCuriosities.BackgroundColor = ViewMenuAuthor.BackgroundColor = ViewMenuMuseum.BackgroundColor = UIColor.Clear;
                 MenuItemSelected?.Invoke(this, PageName.Home);
             }));
             ViewMenuPhotos.AddGestureRecognizer(new UITapGestureRecognizer((obj) =>
             {
-                ViewMenuPhotos.BackgroundColor = AppColors.LightGray;
+                ViewMenuPhotos.BackgroundColor = AppColors.DarkGray.ChangeAlpha(0.3f);
                 ViewMenuHome.BackgroundColor = ViewMenuCuriosities.BackgroundColor = ViewMenuAuthor.BackgroundColor = ViewMenuMuseum.BackgroundColor = UIColor.Clear;
                 MenuItemSelected?.Invoke(this, PageName.Photos);
             }));
             ViewMenuCuriosities.AddGestureRecognizer(new UITapGestureRecognizer((obj) =>
             {
-                ViewMenuCuriosities.BackgroundColor = AppColors.LightGray;
+                ViewMenuCuriosities.BackgroundColor = AppColors.DarkGray.ChangeAlpha(0.3f);
                 ViewMenuHome.BackgroundColor = ViewMenuPhotos.BackgroundColor = ViewMenuAuthor.BackgroundColor = ViewMenuMuseum.BackgroundColor = UIColor.Clear;
                 MenuItemSelected?.Invoke(this, PageName.Curiosities);
             }));
             ViewMenuAuthor.AddGestureRecognizer(new UITapGestureRecognizer((obj) =>
             {
-                ViewMenuAuthor.BackgroundColor = AppColors.LightGray;
+                ViewMenuAuthor.BackgroundColor = AppColors.DarkGray.ChangeAlpha(0.3f);
                 ViewMenuHome.BackgroundColor = ViewMenuPhotos.BackgroundColor = ViewMenuCuriosities.BackgroundColor = ViewMenuMuseum.BackgroundColor = UIColor.Clear;
                 MenuItemSelected?.Invoke(this, PageName.Author);
             }));
             ViewMenuMuseum.AddGestureRecognizer(new UITapGestureRecognizer((obj) =>
             {
-                ViewMenuMuseum.BackgroundColor = AppColors.LightGray;
+                ViewMenuMuseum.BackgroundColor = AppColors.DarkGray.ChangeAlpha(0.3f);
                 ViewMenuHome.BackgroundColor = ViewMenuPhotos.BackgroundColor = ViewMenuCuriosities.BackgroundColor = ViewMenuAuthor.BackgroundColor = UIColor.Clear;
                 MenuItemSelected?.Invoke(this, PageName.Museum);
             }));
@@ -88,7 +92,7 @@ namespace sbh.CustomControls
             ViewSeparator.Alpha = 0.6f;
             LabelHome.TextColor = LabelPhotos.TextColor = LabelCuriosities.TextColor = LabelAuthor.TextColor = LabelMuseum.TextColor = AppColors.NaturalBlack;
 
-            ViewMenuHome.BackgroundColor = AppColors.LightGray;
+            ViewMenuHome.BackgroundColor = AppColors.DarkGray.ChangeAlpha(0.3f);
             ViewHeader.BackgroundColor = AppColors.DarkRed;
         }
 
