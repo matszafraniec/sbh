@@ -79,7 +79,7 @@ namespace sbh.CustomControls
             LabelPhotos.Text = "Fotografie";
             LabelCuriosities.Text = "Ciekawostki";
             LabelUseful.Text = "Przydatne";
-            LabelAuthor.Text = "Autor";
+            LabelAuthor.Text = "Zespół autorski";
             LabelMuseum.Text = "Odwiedź koniecznie";
             LabelSubheader.Text = "100-lecie powrotu miasta do Macierzy";
 

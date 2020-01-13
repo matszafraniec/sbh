@@ -89,10 +89,6 @@ namespace sbh.ViewControllers
 
         private void SetStyles()
         {
-            LabelSourceInfo.Text = "Zdjęcia pochodzą z Muzeum Wojsk Lądowych.";
-            LabelSourceInfo.TextColor = AppColors.DarkRed;
-            LabelSourceInfo.Font = UIFont.ItalicSystemFontOfSize(15);
-
             ScrollViewImageZooming.Hidden = ViewOverlay.Hidden = true;
             ScrollViewImageZooming.MinimumZoomScale = 1.0f;
             ScrollViewImageZooming.MaximumZoomScale = 5.0f;
@@ -104,30 +100,56 @@ namespace sbh.ViewControllers
         internal class PhotoItemsTableViewSource : UITableViewSource
         {
             PhotosVc _vc;
+            private readonly List<Item> _plainItems;
+            public enum ItemType { Photo, Footer }
+            public class Item
+            {
+                public ItemType Type { get; set; }
+                public Photo Photo { get; set; }
+            }
+            
 
             public PhotoItemsTableViewSource(PhotosVc vc)
             {
                 _vc = vc;
+
+                _plainItems = new List<Item>();
+
+                foreach(var photo in _vc.ItemsList)
+                    _plainItems.Add(new Item { Type = ItemType.Photo, Photo = photo });
+
+                _plainItems.Add(new Item { Type = ItemType.Footer });
             }
 
             public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
             {
-                var cell = (PhotoItemCell)tableView.DequeueReusableCell("PhotoItemCell");
-                cell.Setup(_vc.ItemsList[indexPath.Row]);
-                return cell;
+                if(_plainItems[indexPath.Row].Type == ItemType.Photo)
+                {
+                    var cell = (PhotoItemCell)tableView.DequeueReusableCell("PhotoItemCell");
+                    cell.Setup(_vc.ItemsList[indexPath.Row]);
+                    return cell;
+                }
+                else
+                {
+                    var cell = (PhotoFooterItemCell)tableView.DequeueReusableCell("PhotoFooterItemCell");
+                    cell.Setup();
+                    return cell;
+                }
             }
 
             public override nint RowsInSection(UITableView tableview, nint section)
             {
-                return _vc.ItemsList.Count;
+                return _vc.ItemsList.Count + 1;
             }
 
             public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
             {
                 tableView.DeselectRow(indexPath, true);
 
-                _vc.ImageViewZooming.Image = _vc.ItemsList[indexPath.Row].Image;
+                if (_plainItems[indexPath.Row].Type == ItemType.Footer)
+                    return;
 
+                _vc.ImageViewZooming.Image = _vc.ItemsList[indexPath.Row].Image;
                 _vc.ScrollViewImageZooming.Hidden = _vc.ViewOverlay.Hidden = false;
 
                 UIView.Animate(0.4, () =>

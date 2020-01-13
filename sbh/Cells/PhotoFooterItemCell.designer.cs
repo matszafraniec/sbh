@@ -10,23 +10,11 @@ using System.CodeDom.Compiler;
 
 namespace sbh.Cells
 {
-    [Register ("PhotoItemCell")]
-    partial class PhotoItemCell
+    [Register ("PhotoFooterItemCell")]
+    partial class PhotoFooterItemCell
     {
         [Outlet]
-        UIKit.UIImageView ImageViewPhoto { get; set; }
-
-
-        [Outlet]
-        UIKit.UILabel LabelDescription { get; set; }
-
-
-        [Outlet]
-        UIKit.UILabel LabelPhotoNumber { get; set; }
-
-
-        [Outlet]
-        UIKit.UIView ViewPhotoNumberWrapper { get; set; }
+        UIKit.UILabel LabelSourceInfo { get; set; }
 
         void ReleaseDesignerOutlets ()
         {

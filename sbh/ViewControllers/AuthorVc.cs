@@ -32,6 +32,12 @@ namespace sbh.ViewControllers
                     Name = "Sławomir Ciecierski",
                     Description = "Kierownik projektu, programista Java, kompozytor.",
                     ImagePath = "Images/developer-stan"
+                },
+                new Author
+                {
+                    Name = "Mateusz Szafraniec",
+                    Description = "Programista aplikacji mobilnych.",
+                    ImagePath = "Images/developer-mat"
                 }
             };
 
@@ -42,22 +48,45 @@ namespace sbh.ViewControllers
         internal class AuthorItemsTableViewSource : UITableViewSource
         {
             AuthorVc _vc;
+            private readonly List<Item> _plainItems;
+            public enum ItemType { Author, Team }
+            public class Item
+            {
+                public ItemType Type { get; set; }
+                public Author Author { get; set; }
+            }
 
             public AuthorItemsTableViewSource(AuthorVc vc)
             {
                 _vc = vc;
+
+                _plainItems = new List<Item>();
+
+                foreach (var author in _vc.ItemsList)
+                    _plainItems.Add(new Item { Type = ItemType.Author, Author = author });
+
+                _plainItems.Add(new Item { Type = ItemType.Team });
             }
 
             public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
             {
-                var cell = (AuthorItemCell)tableView.DequeueReusableCell("AuthorItemCell");
-                cell.Setup(_vc.ItemsList[indexPath.Row]);
-                return cell;
+                if (_plainItems[indexPath.Row].Type == ItemType.Author)
+                {
+                    var cell = (AuthorItemCell)tableView.DequeueReusableCell("AuthorItemCell");
+                    cell.Setup(_vc.ItemsList[indexPath.Row]);
+                    return cell;
+                }
+                else
+                {
+                    var cell = (AuthorTeamItemCell)tableView.DequeueReusableCell("AuthorTeamItemCell");
+                    cell.Setup();
+                    return cell;
+                }
             }
 
             public override nint RowsInSection(UITableView tableview, nint section)
             {
-                return _vc.ItemsList.Count;
+                return _vc.ItemsList.Count + 1;
             }
         }
     }

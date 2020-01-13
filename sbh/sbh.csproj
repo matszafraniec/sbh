@@ -216,6 +216,14 @@
           <DependentUpon>PhotoItemCell.cs</DependentUpon>
         </Compile>
         <Compile Include="Classes\Photo.cs" />
+        <Compile Include="Cells\PhotoFooterItemCell.cs" />
+        <Compile Include="Cells\PhotoFooterItemCell.designer.cs">
+          <DependentUpon>PhotoFooterItemCell.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Cells\AuthorTeamItemCell.cs" />
+        <Compile Include="Cells\AuthorTeamItemCell.designer.cs">
+          <DependentUpon>AuthorTeamItemCell.cs</DependentUpon>
+        </Compile>
     </ItemGroup>
     <ItemGroup>
       <BundleResource Include="Resources\Icons\icon-apps%402x.png" />
@@ -243,6 +251,7 @@
       <BundleResource Include="Resources\Images\developer-stan.webp" />
       <BundleResource Include="Resources\Images\background.webp" />
       <BundleResource Include="Resources\Icons\image-background.png" />
+      <BundleResource Include="Resources\Images\developer-mat.webp" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
