@@ -15,6 +15,8 @@ namespace sbh.Cells
             LabelSourceInfo.Text = "Zdjęcia pochodzą z Muzeum Wojsk Lądowych.";
             LabelSourceInfo.TextColor = AppColors.DarkRed;
             LabelSourceInfo.Font = UIFont.ItalicSystemFontOfSize(15);
+
+            SelectionStyle = UITableViewCellSelectionStyle.None;
         }
     }
 }

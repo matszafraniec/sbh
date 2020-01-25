@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sbh", "sbh\sbh.csproj", "{9D927930-1E2A-4C04-A7E3-9F84566E0B0C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneSignalNotificationServiceExtension", "OneSignalNotificationServiceExtension\OneSignalNotificationServiceExtension.csproj", "{C92B73F2-DA2D-4AF4-BA61-19B6684B4BAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -19,5 +21,13 @@ Global
 		{9D927930-1E2A-4C04-A7E3-9F84566E0B0C}.Debug|iPhone.Build.0 = Debug|iPhone
 		{9D927930-1E2A-4C04-A7E3-9F84566E0B0C}.Release|iPhone.ActiveCfg = Release|iPhone
 		{9D927930-1E2A-4C04-A7E3-9F84566E0B0C}.Release|iPhone.Build.0 = Release|iPhone
+		{C92B73F2-DA2D-4AF4-BA61-19B6684B4BAE}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{C92B73F2-DA2D-4AF4-BA61-19B6684B4BAE}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{C92B73F2-DA2D-4AF4-BA61-19B6684B4BAE}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{C92B73F2-DA2D-4AF4-BA61-19B6684B4BAE}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{C92B73F2-DA2D-4AF4-BA61-19B6684B4BAE}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{C92B73F2-DA2D-4AF4-BA61-19B6684B4BAE}.Debug|iPhone.Build.0 = Debug|iPhone
+		{C92B73F2-DA2D-4AF4-BA61-19B6684B4BAE}.Release|iPhone.ActiveCfg = Release|iPhone
+		{C92B73F2-DA2D-4AF4-BA61-19B6684B4BAE}.Release|iPhone.Build.0 = Release|iPhone
 	EndGlobalSection
 EndGlobal
