@@ -1,5 +1,4 @@
-﻿using Com.OneSignal;
-using Foundation;
+﻿using Foundation;
 using UIKit;
 
 namespace sbh
@@ -18,9 +17,6 @@ namespace sbh
         {
             // Override point for customization after application launch.
             // If not required for your application you can safely delete this method
-
-            OneSignal.Current.StartInit("c0be9e6d-5350-4249-b022-04f78ef374b2")
-                  .EndInit();
 
             return true;
         }

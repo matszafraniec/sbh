@@ -62,7 +62,6 @@
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <MtouchLink>SdkOnly</MtouchLink>
         <MtouchArch>ARM64</MtouchArch>
-        <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
         <CodesignKey>iPhone Developer: mat.szafraniec@outlook.com (ZYS25U8A5Q)</CodesignKey>
         <MtouchDebug>true</MtouchDebug>
 <MtouchExtraArgs>--optimize=-remove-dynamic-registrar</MtouchExtraArgs>
@@ -79,11 +78,11 @@
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <MtouchLink>SdkOnly</MtouchLink>
         <MtouchArch>ARM64</MtouchArch>
-        <CodesignKey>Apple Distribution: Mateusz Szafraniec (RJ6T66Z6F7)</CodesignKey>
+        <CodesignKey>iPhone Developer: mat.szafraniec@outlook.com (ZYS25U8A5Q)</CodesignKey>
         <MtouchExtraArgs>--optimize=-remove-dynamic-registrar</MtouchExtraArgs>
         <MtouchUseLlvm>true</MtouchUseLlvm>
-        <CodesignProvision>SBH iOS Distribution</CodesignProvision>
         <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+        <CodesignProvision>VS: WildCard Development</CodesignProvision>
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="System" />
@@ -97,9 +96,6 @@
       <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
       <PackageReference Include="WebP.Touch">
         <Version>1.0.8</Version>
-      </PackageReference>
-      <PackageReference Include="Com.OneSignal">
-        <Version>3.7.1</Version>
       </PackageReference>
     </ItemGroup>
     <ItemGroup>
@@ -260,13 +256,6 @@
       <BundleResource Include="Resources\Images\background.webp" />
       <BundleResource Include="Resources\Icons\image-background.png" />
       <BundleResource Include="Resources\Images\developer-mat.webp" />
-    </ItemGroup>
-    <ItemGroup>
-      <ProjectReference Include="..\OneSignalNotificationServiceExtension\OneSignalNotificationServiceExtension.csproj">
-        <IsAppExtension>true</IsAppExtension>
-        <Project>{C92B73F2-DA2D-4AF4-BA61-19B6684B4BAE}</Project>
-        <Name>OneSignalNotificationServiceExtension</Name>
-      </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
