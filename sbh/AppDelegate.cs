@@ -19,7 +19,7 @@ namespace sbh
             // Override point for customization after application launch.
             // If not required for your application you can safely delete this method
 
-            OneSignal.Current.StartInit("c0be9e6d-5350-4249-b022-04f78ef374b2")
+            OneSignal.Current.StartInit("0ec9d5fe-2852-45cf-b85a-87e8bbd97982")
                   .EndInit();
 
             return true;

@@ -62,7 +62,7 @@
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <MtouchLink>SdkOnly</MtouchLink>
         <MtouchArch>ARM64</MtouchArch>
-        <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+        <CodesignEntitlements>EntitlementsDebug.plist</CodesignEntitlements>
         <CodesignKey>iPhone Developer: mat.szafraniec@outlook.com (ZYS25U8A5Q)</CodesignKey>
         <MtouchDebug>true</MtouchDebug>
 <MtouchExtraArgs>--optimize=-remove-dynamic-registrar</MtouchExtraArgs>
@@ -82,7 +82,7 @@
         <CodesignKey>Apple Distribution: Mateusz Szafraniec (RJ6T66Z6F7)</CodesignKey>
         <MtouchExtraArgs>--optimize=-remove-dynamic-registrar</MtouchExtraArgs>
         <MtouchUseLlvm>true</MtouchUseLlvm>
-        <CodesignProvision>SBH iOS Distribution</CodesignProvision>
+        <CodesignProvision>SekretyBydgoskiejHistorii AdHoc</CodesignProvision>
         <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     </PropertyGroup>
     <ItemGroup>
@@ -166,6 +166,7 @@
     <ItemGroup>
         <None Include="Info.plist" />
         <None Include="Entitlements.plist" />
+        <None Include="EntitlementsDebug.plist" />
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Main.cs" />
