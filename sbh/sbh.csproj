@@ -233,6 +233,16 @@
         <Compile Include="Cells\AuthorTeamItemCell.designer.cs">
           <DependentUpon>AuthorTeamItemCell.cs</DependentUpon>
         </Compile>
+        <Compile Include="Classes\Media.cs" />
+        <Compile Include="ViewControllers\MediaVc.cs" />
+        <Compile Include="ViewControllers\MediaVc.designer.cs">
+          <DependentUpon>MediaVc.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Cells\MediaItemCell.cs" />
+        <Compile Include="Cells\MediaItemCell.designer.cs">
+          <DependentUpon>MediaItemCell.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Helpers\YoutubeHelper.cs" />
     </ItemGroup>
     <ItemGroup>
       <BundleResource Include="Resources\Icons\icon-apps%402x.png" />
@@ -261,6 +271,12 @@
       <BundleResource Include="Resources\Images\background.webp" />
       <BundleResource Include="Resources\Icons\image-background.png" />
       <BundleResource Include="Resources\Images\developer-mat.webp" />
+      <BundleResource Include="Resources\Icons\icon-movie%402x.png" />
+      <BundleResource Include="Resources\Icons\icon-movie%403x.png" />
+      <BundleResource Include="Resources\Images\image-movie-1.png" />
+      <BundleResource Include="Resources\Images\image-movie-2.png" />
+      <BundleResource Include="Resources\Images\image-movie-3.png" />
+      <BundleResource Include="Resources\Images\image-music-1.png" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\OneSignalNotificationServiceExtension\OneSignalNotificationServiceExtension.csproj">

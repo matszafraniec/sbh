@@ -1,39 +1,50 @@
 // WARNING
 //
-// This file has been generated automatically by Visual Studio from the outlets and
-// actions declared in your storyboard file.
-// Manual changes to this file will not be maintained.
+// This file has been generated automatically by Visual Studio to store outlets and
+// actions made in the UI designer. If it is removed, they will be lost.
+// Manual changes to this file may not be handled correctly.
 //
 using Foundation;
-using System;
 using System.CodeDom.Compiler;
 
 namespace sbh.ViewControllers
 {
-    [Register ("PhotosVc")]
-    partial class PhotosVc
-    {
-        [Outlet]
-        UIKit.UIImageView ImageViewZooming { get; set; }
+	[Register ("PhotosVc")]
+	partial class PhotosVc
+	{
+		[Outlet]
+		UIKit.UIImageView ImageViewZooming { get; set; }
 
+		[Outlet]
+		UIKit.UIScrollView ScrollViewImageZooming { get; set; }
 
-        [Outlet]
-        UIKit.UILabel LabelSourceInfo { get; set; }
+		[Outlet]
+		UIKit.UITableView TableViewPhotoItems { get; set; }
 
+		[Outlet]
+		UIKit.UIView ViewOverlay { get; set; }
+		
+		void ReleaseDesignerOutlets ()
+		{
+			if (ImageViewZooming != null) {
+				ImageViewZooming.Dispose ();
+				ImageViewZooming = null;
+			}
 
-        [Outlet]
-        UIKit.UIScrollView ScrollViewImageZooming { get; set; }
+			if (ScrollViewImageZooming != null) {
+				ScrollViewImageZooming.Dispose ();
+				ScrollViewImageZooming = null;
+			}
 
+			if (TableViewPhotoItems != null) {
+				TableViewPhotoItems.Dispose ();
+				TableViewPhotoItems = null;
+			}
 
-        [Outlet]
-        UIKit.UITableView TableViewPhotoItems { get; set; }
-
-
-        [Outlet]
-        UIKit.UIView ViewOverlay { get; set; }
-
-        void ReleaseDesignerOutlets ()
-        {
-        }
-    }
+			if (ViewOverlay != null) {
+				ViewOverlay.Dispose ();
+				ViewOverlay = null;
+			}
+		}
+	}
 }

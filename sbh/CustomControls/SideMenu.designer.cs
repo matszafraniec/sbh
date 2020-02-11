@@ -42,6 +42,10 @@ namespace sbh.CustomControls
 
 
         [Outlet]
+        UIKit.UILabel LabelMedia { get; set; }
+
+
+        [Outlet]
         UIKit.UILabel LabelMuseum { get; set; }
 
 
@@ -75,6 +79,10 @@ namespace sbh.CustomControls
 
         [Outlet]
         UIKit.UIView ViewMenuHome { get; set; }
+
+
+        [Outlet]
+        UIKit.UIView ViewMenuMedia { get; set; }
 
 
         [Outlet]

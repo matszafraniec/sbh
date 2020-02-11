@@ -4,6 +4,7 @@
     {
         Home,
         Photos,
+        Media,
         Curiosities,
         Author,
         Museum

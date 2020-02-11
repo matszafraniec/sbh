@@ -1,4 +1,5 @@
 using sbh.Classes;
+using sbh.Helpers;
 using System;
 using UIKit;
 
@@ -15,11 +16,17 @@ namespace sbh.Cells
             SetStyles();
 
             LabelDescription.Text = item.Description;
+
+            LabelNew.Hidden = item.IsNew ? false : true;
+
         }
 
         private void SetStyles()
         {
             LabelDescription.Font = UIFont.SystemFontOfSize(16);
+            LabelNew.Font = UIFont.SystemFontOfSize(16);
+            LabelNew.TextColor = AppColors.NaturalBlue;
+            LabelNew.Text = "Nowe";
         }
     }
 }

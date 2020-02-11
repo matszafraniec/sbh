@@ -90,10 +90,10 @@ namespace sbh.ViewControllers
 
             SideMenuControl.BackgroundColor = AppColors.WhiteSmoke;
             ViewSideMenuOverlay.BackgroundColor = ViewTopBarOverlay.BackgroundColor = AppColors.NaturalBlack;
-            ViewSideMenuOverlay.Hidden = ViewTopBarOverlay.Hidden = AuthorContainerView.Hidden = CuriositiesContainerView.Hidden = MuseumContainerView.Hidden = PhotosContainerView.Hidden = true;
+            ViewSideMenuOverlay.Hidden = ViewTopBarOverlay.Hidden = AuthorContainerView.Hidden = CuriositiesContainerView.Hidden = MuseumContainerView.Hidden = MediaContainerView.Hidden = PhotosContainerView.Hidden = true;
             ViewSideMenuOverlay.Alpha = ViewTopBarOverlay.Alpha = 0;
 
-            TextViewDescription.Text = "Aplikacja ma za zadanie przybliżyć ważne wydarzenia z życia Bydgoszczy, które przez lata popadły w zapomnienie. Piękna historia miasta, nietuzinkowe postaci – przyjrzyj się uważnie tym unikalnym zdjęciom: to wszystko w aplikacji pod nazwą: Sekrety Bydgoskiej Historii.\n \nKrzysztof Drozdowski";
+            TextViewDescription.Text = "Aplikacja ma za zadanie przybliżyć ważne wydarzenia z życia Bydgoszczy, które przez lata popadły w zapomnienie. Piękna historia miasta, nietuzinkowe postaci – przyjrzyj się uważnie tym unikalnym zdjęciom, obejrzyj filmy i wysłuchaj muzyki. To wszystko w aplikacji pod nazwą: Sekrety Bydgoskiej Historii. Projekt będzie rozwijał się o kolejne sekrety, więc wróć tu koniecznie.\n \nKrzysztof Drozdowski";
             TextViewDescription.Font = UIFont.ItalicSystemFontOfSize(16);
 
             MainViewWrapper.Hidden = false;
@@ -121,27 +121,32 @@ namespace sbh.ViewControllers
             switch(e)
             {
                 case PageName.Photos:
-                    MainViewWrapper.Hidden = AuthorContainerView.Hidden = MuseumContainerView.Hidden = CuriositiesContainerView.Hidden = true;
+                    MainViewWrapper.Hidden = AuthorContainerView.Hidden = MediaContainerView.Hidden = MuseumContainerView.Hidden = CuriositiesContainerView.Hidden = true;
                     PhotosContainerView.Hidden = SideMenuVisibility = false;
                     CurrentPageTitle = "Fotografie";
                     break;
+                case PageName.Media:
+                    MainViewWrapper.Hidden = PhotosContainerView.Hidden = AuthorContainerView.Hidden = MuseumContainerView.Hidden = CuriositiesContainerView.Hidden = true;
+                    MediaContainerView.Hidden = SideMenuVisibility = false;
+                    CurrentPageTitle = "Media";
+                    break;
                 case PageName.Museum:
-                    MainViewWrapper.Hidden = AuthorContainerView.Hidden = CuriositiesContainerView.Hidden = PhotosContainerView.Hidden = true;
+                    MainViewWrapper.Hidden = AuthorContainerView.Hidden = MediaContainerView.Hidden = CuriositiesContainerView.Hidden = PhotosContainerView.Hidden = true;
                     MuseumContainerView.Hidden = SideMenuVisibility = false;
                     CurrentPageTitle = "Odwiedź koniecznie";
                     break;
                 case PageName.Home:
-                    CuriositiesContainerView.Hidden = AuthorContainerView.Hidden = MuseumContainerView.Hidden = PhotosContainerView.Hidden = true;
+                    CuriositiesContainerView.Hidden = AuthorContainerView.Hidden = MediaContainerView.Hidden = MuseumContainerView.Hidden = PhotosContainerView.Hidden = true;
                     MainViewWrapper.Hidden = SideMenuVisibility = false;
                     CurrentPageTitle = "Główna";
                     break;
                 case PageName.Curiosities:
-                    MainViewWrapper.Hidden = AuthorContainerView.Hidden = MuseumContainerView.Hidden = PhotosContainerView.Hidden = true;
+                    MainViewWrapper.Hidden = AuthorContainerView.Hidden = MediaContainerView.Hidden = MuseumContainerView.Hidden = PhotosContainerView.Hidden = true;
                     CuriositiesContainerView.Hidden = SideMenuVisibility = false;
                     CurrentPageTitle = "Ciekawostki";
                     break;
                 case PageName.Author:
-                    MainViewWrapper.Hidden = CuriositiesContainerView.Hidden = MuseumContainerView.Hidden = PhotosContainerView.Hidden = true;
+                    MainViewWrapper.Hidden = CuriositiesContainerView.Hidden = MediaContainerView.Hidden = MuseumContainerView.Hidden = PhotosContainerView.Hidden = true;
                     AuthorContainerView.Hidden = SideMenuVisibility = false;
                     CurrentPageTitle = "Autor";
                     break;

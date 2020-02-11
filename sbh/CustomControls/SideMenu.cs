@@ -41,31 +41,37 @@ namespace sbh.CustomControls
             ViewMenuHome.AddGestureRecognizer(new UITapGestureRecognizer((obj) =>
             {
                 ViewMenuHome.BackgroundColor = AppColors.DarkGray.ChangeAlpha(0.3f);
-                ViewMenuPhotos.BackgroundColor = ViewMenuCuriosities.BackgroundColor = ViewMenuAuthor.BackgroundColor = ViewMenuMuseum.BackgroundColor = UIColor.Clear;
+                ViewMenuPhotos.BackgroundColor = ViewMenuCuriosities.BackgroundColor = ViewMenuAuthor.BackgroundColor = ViewMenuMuseum.BackgroundColor = ViewMenuMedia.BackgroundColor = UIColor.Clear;
                 MenuItemSelected?.Invoke(this, PageName.Home);
             }));
             ViewMenuPhotos.AddGestureRecognizer(new UITapGestureRecognizer((obj) =>
             {
                 ViewMenuPhotos.BackgroundColor = AppColors.DarkGray.ChangeAlpha(0.3f);
-                ViewMenuHome.BackgroundColor = ViewMenuCuriosities.BackgroundColor = ViewMenuAuthor.BackgroundColor = ViewMenuMuseum.BackgroundColor = UIColor.Clear;
+                ViewMenuHome.BackgroundColor = ViewMenuCuriosities.BackgroundColor = ViewMenuAuthor.BackgroundColor = ViewMenuMuseum.BackgroundColor = ViewMenuMedia.BackgroundColor = UIColor.Clear;
                 MenuItemSelected?.Invoke(this, PageName.Photos);
+            }));
+            ViewMenuMedia.AddGestureRecognizer(new UITapGestureRecognizer((obj) =>
+            {
+                ViewMenuMedia.BackgroundColor = AppColors.DarkGray.ChangeAlpha(0.3f);
+                ViewMenuHome.BackgroundColor = ViewMenuPhotos.BackgroundColor = ViewMenuCuriosities.BackgroundColor = ViewMenuAuthor.BackgroundColor = ViewMenuMuseum.BackgroundColor = UIColor.Clear;
+                MenuItemSelected?.Invoke(this, PageName.Media);
             }));
             ViewMenuCuriosities.AddGestureRecognizer(new UITapGestureRecognizer((obj) =>
             {
                 ViewMenuCuriosities.BackgroundColor = AppColors.DarkGray.ChangeAlpha(0.3f);
-                ViewMenuHome.BackgroundColor = ViewMenuPhotos.BackgroundColor = ViewMenuAuthor.BackgroundColor = ViewMenuMuseum.BackgroundColor = UIColor.Clear;
+                ViewMenuHome.BackgroundColor = ViewMenuPhotos.BackgroundColor = ViewMenuAuthor.BackgroundColor = ViewMenuMuseum.BackgroundColor = ViewMenuMedia.BackgroundColor = UIColor.Clear;
                 MenuItemSelected?.Invoke(this, PageName.Curiosities);
             }));
             ViewMenuAuthor.AddGestureRecognizer(new UITapGestureRecognizer((obj) =>
             {
                 ViewMenuAuthor.BackgroundColor = AppColors.DarkGray.ChangeAlpha(0.3f);
-                ViewMenuHome.BackgroundColor = ViewMenuPhotos.BackgroundColor = ViewMenuCuriosities.BackgroundColor = ViewMenuMuseum.BackgroundColor = UIColor.Clear;
+                ViewMenuHome.BackgroundColor = ViewMenuPhotos.BackgroundColor = ViewMenuCuriosities.BackgroundColor = ViewMenuMuseum.BackgroundColor = ViewMenuMedia.BackgroundColor = UIColor.Clear;
                 MenuItemSelected?.Invoke(this, PageName.Author);
             }));
             ViewMenuMuseum.AddGestureRecognizer(new UITapGestureRecognizer((obj) =>
             {
                 ViewMenuMuseum.BackgroundColor = AppColors.DarkGray.ChangeAlpha(0.3f);
-                ViewMenuHome.BackgroundColor = ViewMenuPhotos.BackgroundColor = ViewMenuCuriosities.BackgroundColor = ViewMenuAuthor.BackgroundColor = UIColor.Clear;
+                ViewMenuHome.BackgroundColor = ViewMenuPhotos.BackgroundColor = ViewMenuCuriosities.BackgroundColor = ViewMenuAuthor.BackgroundColor = ViewMenuMedia.BackgroundColor = UIColor.Clear;
                 MenuItemSelected?.Invoke(this, PageName.Museum);
             }));
 
@@ -77,6 +83,7 @@ namespace sbh.CustomControls
             LabelHeader.Text = "Sekrety bydgoskiej historii";
             LabelHome.Text = "Główna";
             LabelPhotos.Text = "Fotografie";
+            LabelMedia.Text = "Media";
             LabelCuriosities.Text = "Ciekawostki";
             LabelUseful.Text = "Przydatne";
             LabelAuthor.Text = "Zespół autorski";
@@ -84,13 +91,13 @@ namespace sbh.CustomControls
             LabelSubheader.Text = "100-lecie powrotu miasta do Macierzy";
 
             LabelHeader.Font = UIFont.BoldSystemFontOfSize(16);
-            LabelHome.Font = LabelPhotos.Font = LabelCuriosities.Font = LabelUseful.Font = LabelAuthor.Font = LabelMuseum.Font = UIFont.SystemFontOfSize(15);
+            LabelHome.Font = LabelPhotos.Font = LabelMedia.Font = LabelCuriosities.Font = LabelUseful.Font = LabelAuthor.Font = LabelMuseum.Font = UIFont.SystemFontOfSize(15);
             LabelSubheader.Font = UIFont.SystemFontOfSize(13);
 
             LabelHeader.TextColor = LabelSubheader.TextColor = AppColors.WhiteSmoke;
             LabelUseful.TextColor = ViewSeparator.BackgroundColor = AppColors.DarkGray;
             ViewSeparator.Alpha = 0.6f;
-            LabelHome.TextColor = LabelPhotos.TextColor = LabelCuriosities.TextColor = LabelAuthor.TextColor = LabelMuseum.TextColor = AppColors.NaturalBlack;
+            LabelHome.TextColor = LabelPhotos.TextColor = LabelMedia.TextColor = LabelCuriosities.TextColor = LabelAuthor.TextColor = LabelMuseum.TextColor = AppColors.NaturalBlack;
 
             ViewMenuHome.BackgroundColor = AppColors.DarkGray.ChangeAlpha(0.3f);
             ViewHeader.BackgroundColor = AppColors.DarkRed;

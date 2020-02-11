@@ -16,6 +16,7 @@
                 <outlet property="LabelCuriosities" destination="enL-O1-7nV" id="aif-ps-69F"/>
                 <outlet property="LabelHeader" destination="itX-VX-kRo" id="HCr-qB-bWa"/>
                 <outlet property="LabelHome" destination="1kt-V6-uvK" id="UfV-Hz-NWi"/>
+                <outlet property="LabelMedia" destination="gwC-Xk-Oo4" id="TIt-44-6lj"/>
                 <outlet property="LabelMuseum" destination="vdM-2t-a8i" id="Y0x-kr-fAf"/>
                 <outlet property="LabelPhotos" destination="n4C-mx-HCY" id="gSR-a2-xD5"/>
                 <outlet property="LabelSubheader" destination="Aw2-Fm-1cG" id="K83-RZ-SwN"/>
@@ -25,6 +26,7 @@
                 <outlet property="ViewMenuAuthor" destination="Cbv-Ro-P32" id="5LW-8f-jP8"/>
                 <outlet property="ViewMenuCuriosities" destination="h12-4l-1lA" id="9Sf-i8-YbW"/>
                 <outlet property="ViewMenuHome" destination="a78-Io-v3K" id="UAq-vr-mCs"/>
+                <outlet property="ViewMenuMedia" destination="3VO-iI-FxT" id="aGi-Z2-4Wh"/>
                 <outlet property="ViewMenuMuseum" destination="fCj-Im-sC1" id="A1Y-Bh-Ej9"/>
                 <outlet property="ViewMenuPhotos" destination="8bz-1b-LSu" id="Tun-b9-dlf"/>
                 <outlet property="ViewSeparator" destination="43V-Rq-SDU" id="YIl-Qn-0xW"/>
@@ -129,8 +131,34 @@
                                 <constraint firstItem="n4C-mx-HCY" firstAttribute="leading" secondItem="A6P-cT-c8x" secondAttribute="trailing" constant="29" id="yFg-sL-uCq"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h12-4l-1lA" userLabel="ViewMenuCuriosities">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3VO-iI-FxT" userLabel="ViewMenuMedia">
                             <rect key="frame" x="0.0" y="250" width="270" height="60"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/icon-movie" translatesAutoresizingMaskIntoConstraints="NO" id="4hs-Iu-DBn" userLabel="ImageViewMediaIcon">
+                                    <rect key="frame" x="30" y="15" width="30" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="30" id="6KW-ft-DpU"/>
+                                        <constraint firstAttribute="height" constant="30" id="tpe-IR-X1N"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwC-Xk-Oo4" userLabel="LabelMedia">
+                                    <rect key="frame" x="89" y="19.666666666666686" width="171" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="4hs-Iu-DBn" firstAttribute="leading" secondItem="3VO-iI-FxT" secondAttribute="leading" constant="30" id="7Mh-Y3-Dbx"/>
+                                <constraint firstAttribute="trailing" secondItem="gwC-Xk-Oo4" secondAttribute="trailing" constant="10" id="8fi-lj-MT5"/>
+                                <constraint firstAttribute="bottom" secondItem="4hs-Iu-DBn" secondAttribute="bottom" constant="15" id="Ghz-2C-pxe"/>
+                                <constraint firstItem="gwC-Xk-Oo4" firstAttribute="leading" secondItem="4hs-Iu-DBn" secondAttribute="trailing" constant="29" id="Lgp-fE-g7l"/>
+                                <constraint firstItem="4hs-Iu-DBn" firstAttribute="centerY" secondItem="3VO-iI-FxT" secondAttribute="centerY" id="cji-eI-KsD"/>
+                                <constraint firstItem="gwC-Xk-Oo4" firstAttribute="centerY" secondItem="4hs-Iu-DBn" secondAttribute="centerY" id="lxK-4L-QKN"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h12-4l-1lA" userLabel="ViewMenuCuriosities">
+                            <rect key="frame" x="0.0" y="310" width="270" height="60"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/icon-apps" translatesAutoresizingMaskIntoConstraints="NO" id="Wpz-6s-43P" userLabel="ImageViewCuriositiesIcon">
                                     <rect key="frame" x="30" y="15" width="30" height="30"/>
@@ -156,20 +184,20 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="43V-Rq-SDU" userLabel="ViewSeparator">
-                            <rect key="frame" x="10" y="320" width="250" height="1"/>
+                            <rect key="frame" x="10" y="380" width="250" height="1"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="sKN-6Z-LJd"/>
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4kM-a3-eYB" userLabel="LabelUseful">
-                            <rect key="frame" x="20" y="341" width="230" height="21"/>
+                            <rect key="frame" x="20" y="401" width="230" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cbv-Ro-P32" userLabel="ViewMenuAuthor">
-                            <rect key="frame" x="0.0" y="382" width="270" height="60"/>
+                            <rect key="frame" x="0.0" y="442" width="270" height="60"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/icon-author" translatesAutoresizingMaskIntoConstraints="NO" id="b4h-EF-Adi" userLabel="ImageViewAuthorIcon">
                                     <rect key="frame" x="30" y="15" width="30" height="30"/>
@@ -195,7 +223,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fCj-Im-sC1" userLabel="ViewMenuMuseum">
-                            <rect key="frame" x="0.0" y="442" width="270" height="60"/>
+                            <rect key="frame" x="0.0" y="502" width="270" height="60"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/icon-museum" translatesAutoresizingMaskIntoConstraints="NO" id="wih-xN-tAC" userLabel="ImageViewMuseumIcon">
                                     <rect key="frame" x="30" y="15" width="30" height="30"/>
@@ -205,7 +233,7 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdM-2t-a8i" userLabel="LabelMuseum">
-                                    <rect key="frame" x="89" y="19.666666666666686" width="171" height="21"/>
+                                    <rect key="frame" x="89" y="19.666666666666629" width="171" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -230,6 +258,7 @@
                         <constraint firstItem="4kM-a3-eYB" firstAttribute="leading" secondItem="XyK-MI-1dq" secondAttribute="leading" constant="20" id="5u7-hS-S05"/>
                         <constraint firstItem="43V-Rq-SDU" firstAttribute="leading" secondItem="XyK-MI-1dq" secondAttribute="leading" constant="10" id="7wN-wY-coa"/>
                         <constraint firstItem="43V-Rq-SDU" firstAttribute="top" secondItem="h12-4l-1lA" secondAttribute="bottom" constant="10" id="9wQ-fF-ckY"/>
+                        <constraint firstItem="3VO-iI-FxT" firstAttribute="top" secondItem="8bz-1b-LSu" secondAttribute="bottom" id="A62-BN-kPR"/>
                         <constraint firstItem="fCj-Im-sC1" firstAttribute="leading" secondItem="XyK-MI-1dq" secondAttribute="leading" id="APx-KU-S3g"/>
                         <constraint firstAttribute="bottom" secondItem="jwP-pO-TK1" secondAttribute="bottom" id="ClP-0L-RBz"/>
                         <constraint firstAttribute="trailing" secondItem="43V-Rq-SDU" secondAttribute="trailing" constant="10" id="DiX-bK-KWg"/>
@@ -238,15 +267,17 @@
                         <constraint firstItem="7Nl-Bf-x8B" firstAttribute="leading" secondItem="XyK-MI-1dq" secondAttribute="leading" id="LuJ-O3-kNx"/>
                         <constraint firstAttribute="trailing" secondItem="7Nl-Bf-x8B" secondAttribute="trailing" id="Mfl-mC-jfV"/>
                         <constraint firstItem="8bz-1b-LSu" firstAttribute="top" secondItem="a78-Io-v3K" secondAttribute="bottom" id="Mox-Wq-8Nj"/>
+                        <constraint firstItem="3VO-iI-FxT" firstAttribute="leading" secondItem="XyK-MI-1dq" secondAttribute="leading" id="R2S-Md-e6c"/>
                         <constraint firstItem="Cbv-Ro-P32" firstAttribute="top" secondItem="4kM-a3-eYB" secondAttribute="bottom" constant="20" id="R3a-bc-Ut6"/>
                         <constraint firstAttribute="trailing" secondItem="a78-Io-v3K" secondAttribute="trailing" id="SKS-lD-ntM"/>
+                        <constraint firstItem="h12-4l-1lA" firstAttribute="top" secondItem="3VO-iI-FxT" secondAttribute="bottom" id="Tdy-Jg-kXy"/>
                         <constraint firstAttribute="trailing" secondItem="Cbv-Ro-P32" secondAttribute="trailing" id="W9z-nz-dqF"/>
                         <constraint firstItem="Cbv-Ro-P32" firstAttribute="leading" secondItem="XyK-MI-1dq" secondAttribute="leading" id="XqH-Be-fkv"/>
                         <constraint firstAttribute="trailing" secondItem="jwP-pO-TK1" secondAttribute="trailing" id="esu-9R-EKq"/>
                         <constraint firstItem="7Nl-Bf-x8B" firstAttribute="top" secondItem="XyK-MI-1dq" secondAttribute="top" id="il5-Ny-2P1"/>
                         <constraint firstAttribute="trailing" secondItem="fCj-Im-sC1" secondAttribute="trailing" id="odb-UX-SKE"/>
+                        <constraint firstAttribute="trailing" secondItem="3VO-iI-FxT" secondAttribute="trailing" id="s31-BG-IAg"/>
                         <constraint firstItem="a78-Io-v3K" firstAttribute="top" secondItem="7Nl-Bf-x8B" secondAttribute="bottom" constant="10" id="tui-fC-3Yy"/>
-                        <constraint firstItem="h12-4l-1lA" firstAttribute="top" secondItem="8bz-1b-LSu" secondAttribute="bottom" id="vie-YC-HnT"/>
                         <constraint firstItem="jwP-pO-TK1" firstAttribute="leading" secondItem="XyK-MI-1dq" secondAttribute="leading" id="xKL-7J-KCO"/>
                         <constraint firstItem="a78-Io-v3K" firstAttribute="leading" secondItem="XyK-MI-1dq" secondAttribute="leading" id="yg6-UT-A8A"/>
                         <constraint firstItem="jwP-pO-TK1" firstAttribute="top" secondItem="XyK-MI-1dq" secondAttribute="top" id="zXp-eA-Km8"/>
@@ -270,6 +301,7 @@
         <image name="Icons/icon-author" width="16" height="16"/>
         <image name="Icons/icon-camera" width="16" height="16"/>
         <image name="Icons/icon-city" width="16" height="16"/>
+        <image name="Icons/icon-movie" width="16" height="16"/>
         <image name="Icons/icon-museum" width="16" height="16"/>
         <image name="Icons/image-herb" width="16" height="16"/>
     </resources>

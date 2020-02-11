@@ -11,6 +11,7 @@ namespace sbh.Helpers
         public static UIColor WhiteSmoke = UIColor.FromRGB((nfloat)(248.0 / 255.0), (nfloat)(248.0 / 255.0), (nfloat)(248.0 / 255.0));
         public static UIColor NaturalWhite = UIColor.White;
         public static UIColor NaturalBlack = UIColor.Black;
+        public static UIColor NaturalBlue = UIColor.Blue;
 
 
         public static UIColor ChangeAlpha(this UIColor color, float alpha)
