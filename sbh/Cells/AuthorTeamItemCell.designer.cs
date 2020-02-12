@@ -1,27 +1,26 @@
 // WARNING
 //
-// This file has been generated automatically by Visual Studio from the outlets and
-// actions declared in your storyboard file.
-// Manual changes to this file will not be maintained.
+// This file has been generated automatically by Visual Studio to store outlets and
+// actions made in the UI designer. If it is removed, they will be lost.
+// Manual changes to this file may not be handled correctly.
 //
 using Foundation;
-using System;
 using System.CodeDom.Compiler;
 
 namespace sbh.Cells
 {
-    [Register ("AuthorTeamItemCell")]
-    partial class AuthorTeamItemCell
-    {
-        [Outlet]
-        UIKit.UILabel LabelTeamDescription { get; set; }
-
-
-        [Outlet]
-        UIKit.UILabel LabelTeamHeader { get; set; }
-
-        void ReleaseDesignerOutlets ()
-        {
-        }
-    }
+	[Register ("AuthorTeamItemCell")]
+	partial class AuthorTeamItemCell
+	{
+		[Outlet]
+		UIKit.UILabel LabelTeamHeader { get; set; }
+		
+		void ReleaseDesignerOutlets ()
+		{
+			if (LabelTeamHeader != null) {
+				LabelTeamHeader.Dispose ();
+				LabelTeamHeader = null;
+			}
+		}
+	}
 }

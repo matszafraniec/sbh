@@ -30,14 +30,39 @@ namespace sbh.ViewControllers
                 new Author
                 {
                     Name = "Sławomir Ciecierski",
-                    Description = "Kierownik projektu, programista Java, kompozytor.",
+                    Description = "Kierownik projektu, programista Java, kompozytor. Wersja aplikacji na Android.",
                     ImagePath = "Images/developer-stan"
                 },
                 new Author
                 {
                     Name = "Mateusz Szafraniec",
-                    Description = "Programista aplikacji mobilnych.",
+                    Description = "Programista aplikacji mobilnych. Wersja aplikacji na iOS.",
                     ImagePath = "Images/developer-mat"
+                },
+                new Author
+                {
+                    Name = "Konrad Stankiewicz",
+                    ImagePath = "Images/tester-ks"
+                },
+                new Author
+                {
+                    Name = "Paweł Cymbaluk",
+                    ImagePath = "Images/tester-pc"
+                },
+                new Author
+                {
+                    Name = "Łukasz Kamiński",
+                    ImagePath = "Images/tester-lk"
+                },
+                new Author
+                {
+                    Name = "Ewelina Sierżańska",
+                    ImagePath = "Images/tester-es"
+                },
+                new Author
+                {
+                    Name = "Marcin Hyba",
+                    ImagePath = "Images/tester-mh"
                 }
             };
 
@@ -47,8 +72,8 @@ namespace sbh.ViewControllers
 
         internal class AuthorItemsTableViewSource : UITableViewSource
         {
-            AuthorVc _vc;
-            private readonly List<Item> _plainItems;
+            AuthorVc vc;
+            private readonly List<Item> plainItems;
             public enum ItemType { Author, Team }
             public class Item
             {
@@ -58,22 +83,30 @@ namespace sbh.ViewControllers
 
             public AuthorItemsTableViewSource(AuthorVc vc)
             {
-                _vc = vc;
+                this.vc = vc;
 
-                _plainItems = new List<Item>();
+                plainItems = new List<Item>();
 
-                foreach (var author in _vc.ItemsList)
-                    _plainItems.Add(new Item { Type = ItemType.Author, Author = author });
+                for (int i = 0; i <= 2; i++)
+                    plainItems.Add(new Item { Type = ItemType.Author, Author = vc.ItemsList[i] });
 
-                _plainItems.Add(new Item { Type = ItemType.Team });
+                plainItems.Add(new Item { Type = ItemType.Team });
+
+                for (int i = 3; i <= 7; i++)
+                    plainItems.Add(new Item { Type = ItemType.Author, Author = vc.ItemsList[i] });
+
+                foreach(var item in plainItems)
+                {
+                    System.Diagnostics.Debug.WriteLine(item.Type.ToString() + " " + item.Author?.Name);
+                }
             }
 
             public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
             {
-                if (_plainItems[indexPath.Row].Type == ItemType.Author)
+                if (plainItems[indexPath.Row].Type == ItemType.Author)
                 {
                     var cell = (AuthorItemCell)tableView.DequeueReusableCell("AuthorItemCell");
-                    cell.Setup(_vc.ItemsList[indexPath.Row]);
+                    cell.Setup(plainItems[indexPath.Row].Author);
                     return cell;
                 }
                 else
@@ -86,7 +119,7 @@ namespace sbh.ViewControllers
 
             public override nint RowsInSection(UITableView tableview, nint section)
             {
-                return _vc.ItemsList.Count + 1;
+                return plainItems.Count;
             }
         }
     }

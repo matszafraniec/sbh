@@ -26,6 +26,8 @@ namespace sbh.Cells
             LabelName.Lines = 3;
             LabelAddress1.Lines = LabelAddress3.Lines = 2;
             LabelAddress1.Font = LabelAddress2.Font = LabelAddress3.Font = UIFont.SystemFontOfSize(15);
+
+            SelectionStyle = UITableViewCellSelectionStyle.Blue;
         }
     }
 }

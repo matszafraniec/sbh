@@ -21,7 +21,7 @@ namespace sbh.Cells
 
             ImageViewAvatar.Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource(item.ImagePath, "webp"));
             LabelName.Text = item.Name;
-            LabelDescription.Text = item.Description;
+            LabelDescription.Text = item?.Description;
         }
 
         private void SetStyles()

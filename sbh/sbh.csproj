@@ -99,7 +99,7 @@
         <Version>1.0.8</Version>
       </PackageReference>
       <PackageReference Include="Com.OneSignal">
-        <Version>3.7.1</Version>
+        <Version>3.7.2</Version>
       </PackageReference>
     </ItemGroup>
     <ItemGroup>
@@ -242,7 +242,6 @@
         <Compile Include="Cells\MediaItemCell.designer.cs">
           <DependentUpon>MediaItemCell.cs</DependentUpon>
         </Compile>
-        <Compile Include="Helpers\YoutubeHelper.cs" />
     </ItemGroup>
     <ItemGroup>
       <BundleResource Include="Resources\Icons\icon-apps%402x.png" />
@@ -277,6 +276,11 @@
       <BundleResource Include="Resources\Images\image-movie-2.png" />
       <BundleResource Include="Resources\Images\image-movie-3.png" />
       <BundleResource Include="Resources\Images\image-music-1.png" />
+      <BundleResource Include="Resources\Images\tester-ks.webp" />
+      <BundleResource Include="Resources\Images\tester-pc.webp" />
+      <BundleResource Include="Resources\Images\tester-es.webp" />
+      <BundleResource Include="Resources\Images\tester-lk.webp" />
+      <BundleResource Include="Resources\Images\tester-mh.webp" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\OneSignalNotificationServiceExtension\OneSignalNotificationServiceExtension.csproj">

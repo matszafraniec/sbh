@@ -88,7 +88,7 @@ namespace sbh.CustomControls
             LabelUseful.Text = "Przydatne";
             LabelAuthor.Text = "Zespół autorski";
             LabelMuseum.Text = "Odwiedź koniecznie";
-            LabelSubheader.Text = "100-lecie powrotu miasta do Macierzy";
+            LabelSubheader.Text = "100 lat Bydgoszczy w Polsce";
 
             LabelHeader.Font = UIFont.BoldSystemFontOfSize(16);
             LabelHome.Font = LabelPhotos.Font = LabelMedia.Font = LabelCuriosities.Font = LabelUseful.Font = LabelAuthor.Font = LabelMuseum.Font = UIFont.SystemFontOfSize(15);
