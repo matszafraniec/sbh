@@ -86,6 +86,7 @@ namespace sbh.ViewControllers
         private void SetStyles()
         {
             CustomTopBar.SetTitle("Główna");
+            CurrentPageTitle = "Główna";
             CustomTopBar.BackgroundColor = AppColors.DarkRed;
 
             SideMenuControl.BackgroundColor = AppColors.WhiteSmoke;

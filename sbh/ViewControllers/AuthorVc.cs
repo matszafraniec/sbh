@@ -94,11 +94,6 @@ namespace sbh.ViewControllers
 
                 for (int i = 3; i <= 7; i++)
                     plainItems.Add(new Item { Type = ItemType.Author, Author = vc.ItemsList[i] });
-
-                foreach(var item in plainItems)
-                {
-                    System.Diagnostics.Debug.WriteLine(item.Type.ToString() + " " + item.Author?.Name);
-                }
             }
 
             public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)

@@ -396,7 +396,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="69" height="678"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lGG-Rj-ljl" userLabel="TableViewMuseumItems">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lGG-Rj-ljl" userLabel="TableViewMuseumItems">
                                 <rect key="frame" x="16" y="0.0" width="37" height="678"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="fOy-10-rcg" userLabel="ViewTop">
@@ -781,8 +781,8 @@
                         <constraints>
                             <constraint firstItem="iaB-lC-Lgv" firstAttribute="top" secondItem="xgt-hC-9gh" secondAttribute="top" id="A9o-c5-QKT"/>
                             <constraint firstAttribute="trailing" secondItem="iaB-lC-Lgv" secondAttribute="trailing" id="H2G-hO-ggw"/>
-                            <constraint firstItem="700" firstAttribute="top" secondItem="iaB-lC-Lgv" secondAttribute="bottom" id="QDh-Zp-1Hi"/>
                             <constraint firstItem="iaB-lC-Lgv" firstAttribute="leading" secondItem="xgt-hC-9gh" secondAttribute="leading" id="YEm-WB-OsG"/>
+                            <constraint firstAttribute="bottom" secondItem="iaB-lC-Lgv" secondAttribute="bottom" id="obw-YQ-2dr"/>
                         </constraints>
                     </view>
                     <connections>

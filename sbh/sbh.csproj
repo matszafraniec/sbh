@@ -68,7 +68,7 @@
 <MtouchExtraArgs>--optimize=-remove-dynamic-registrar</MtouchExtraArgs>
 <DeviceSpecificBuild>false</DeviceSpecificBuild>
 <MtouchFastDev>true</MtouchFastDev>
-<CodesignProvision>VS: WildCard Development</CodesignProvision>
+<CodesignProvision>VS: pl.matszafraniec.SBH Development</CodesignProvision>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
         <DebugType>none</DebugType>
@@ -82,8 +82,8 @@
         <CodesignKey>Apple Distribution: Mateusz Szafraniec (RJ6T66Z6F7)</CodesignKey>
         <MtouchExtraArgs>--optimize=-remove-dynamic-registrar</MtouchExtraArgs>
         <MtouchUseLlvm>true</MtouchUseLlvm>
-        <CodesignProvision>SekretyBydgoskiejHistorii AdHoc</CodesignProvision>
         <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+        <CodesignProvision>SBH AppStore 2020</CodesignProvision>
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="System" />
@@ -171,7 +171,6 @@
     <ItemGroup>
         <Compile Include="Main.cs" />
         <Compile Include="AppDelegate.cs" />
-        <Compile Include="SceneDelegate.cs" />
         <Compile Include="ViewControllers\MainVc.cs" />
         <Compile Include="ViewControllers\MainVc.designer.cs">
           <DependentUpon>MainVc.cs</DependentUpon>
@@ -242,6 +241,7 @@
         <Compile Include="Cells\MediaItemCell.designer.cs">
           <DependentUpon>MediaItemCell.cs</DependentUpon>
         </Compile>
+        <Compile Include="Helpers\OpenMapHelper.cs" />
     </ItemGroup>
     <ItemGroup>
       <BundleResource Include="Resources\Icons\icon-apps%402x.png" />
@@ -281,13 +281,6 @@
       <BundleResource Include="Resources\Images\tester-es.webp" />
       <BundleResource Include="Resources\Images\tester-lk.webp" />
       <BundleResource Include="Resources\Images\tester-mh.webp" />
-    </ItemGroup>
-    <ItemGroup>
-      <ProjectReference Include="..\OneSignalNotificationServiceExtension\OneSignalNotificationServiceExtension.csproj">
-        <IsAppExtension>true</IsAppExtension>
-        <Project>{C92B73F2-DA2D-4AF4-BA61-19B6684B4BAE}</Project>
-        <Name>OneSignalNotificationServiceExtension</Name>
-      </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
