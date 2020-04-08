@@ -1,5 +1,6 @@
 using CoreGraphics;
 using Foundation;
+using sbh.Classes.Enums;
 using sbh.Helpers;
 using System;
 using System.ComponentModel;
@@ -13,7 +14,25 @@ namespace sbh.CustomControls
         public event EventHandler Disposed;
 
         public EventHandler<bool> MenuIconActivated;
+        public EventHandler<bool> MenuContentTypeActivated;
         public bool IsMenuIconActivated;
+        public bool IsMenuContentTypeActivated;
+        private bool contentTypeButtonIsVisible;
+
+        public bool ContentTypeButtonIsVisible
+        {
+            get => contentTypeButtonIsVisible;
+            set
+            {
+                contentTypeButtonIsVisible = value;
+
+                if (value)
+                    ViewContentType.Hidden = false;
+                else
+                    ViewContentType.Hidden = true;
+            }
+        }
+
 
         public CustomTopBar (IntPtr handle) : base (handle)
         {
@@ -27,7 +46,7 @@ namespace sbh.CustomControls
                 return;
 
             NSBundle.MainBundle.LoadNib("CustomTopBar", this, null);
-            //RootView.Frame = new CGRect(0, 0, Superview.Frame.Width, RootView.Frame.Height);
+            RootView.Frame = new CGRect(0, 0, Superview.Frame.Width, RootView.Frame.Height);
             AddSubview(RootView);
 
             ViewMenuIcon.AddGestureRecognizer(new UITapGestureRecognizer(() =>
@@ -38,19 +57,48 @@ namespace sbh.CustomControls
                     MenuIconActivated?.Invoke(this, false);
             }));
 
+            ViewContentType.AddGestureRecognizer(new UITapGestureRecognizer(() =>
+            {
+                if (!IsMenuContentTypeActivated)
+                    MenuContentTypeActivated?.Invoke(this, true);
+                else
+                    MenuContentTypeActivated?.Invoke(this, false);
+            }));
+
             SetStyles();
         }
 
         private void SetStyles()
         {
-            LabelTitle.TextColor = AppColors.NaturalWhite;
+            LabelTitle.TextColor = LabelContentType.TextColor = AppColors.NaturalWhite;
             LabelTitle.Font = UIFont.BoldSystemFontOfSize(16);
+            LabelContentType.Font = UIFont.SystemFontOfSize(15);
             ViewBackground.BackgroundColor = AppColors.DarkRed;
         }
 
         public void SetTitle(string title)
         {
             LabelTitle.Text = title;
+        }
+
+        public void SetContentTypeTitle(ContentType contentType)
+        {
+            var contentTypeTitle = "";
+
+            switch (contentType)
+            {
+                case ContentType.Bydgoszcz1945:
+                    contentTypeTitle = "Bydgoszcz 1945";
+                    break;
+                case ContentType.MarianRejewski:
+                    contentTypeTitle = "Marian Rejewski";
+                    break;
+                default:
+                    contentTypeTitle = "Bydgoszcz 1920";
+                    break;
+                    
+            }
+            LabelContentType.Text = contentTypeTitle;
         }
     }
 }

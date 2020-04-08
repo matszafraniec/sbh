@@ -156,6 +156,7 @@
         <Folder Include="Classes\Enums\" />
         <Folder Include="Resources\Images\" />
         <Folder Include="Cells\" />
+        <Folder Include="Services\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -242,6 +243,9 @@
           <DependentUpon>MediaItemCell.cs</DependentUpon>
         </Compile>
         <Compile Include="Helpers\OpenMapHelper.cs" />
+        <Compile Include="AppStrings.cs" />
+        <Compile Include="Classes\Enums\ContentType.cs" />
+        <Compile Include="Services\ContentServices.cs" />
     </ItemGroup>
     <ItemGroup>
       <BundleResource Include="Resources\Icons\icon-apps%402x.png" />
@@ -259,12 +263,12 @@
       <BundleResource Include="Resources\Icons\icon-apps%403x.png" />
       <BundleResource Include="Resources\Icons\icon-menu%402x.png" />
       <BundleResource Include="Resources\Icons\icon-menu%403x.png" />
-      <BundleResource Include="Resources\Images\photo3.webp" />
-      <BundleResource Include="Resources\Images\photo4.webp" />
-      <BundleResource Include="Resources\Images\photo5.webp" />
-      <BundleResource Include="Resources\Images\photo6.webp" />
-      <BundleResource Include="Resources\Images\photo2.webp" />
-      <BundleResource Include="Resources\Images\photo1.webp" />
+      <BundleResource Include="Resources\Images\bydgoszcz1920_photo3.webp" />
+      <BundleResource Include="Resources\Images\bydgoszcz1920_photo4.webp" />
+      <BundleResource Include="Resources\Images\bydgoszcz1920_photo5.webp" />
+      <BundleResource Include="Resources\Images\bydgoszcz1920_photo6.webp" />
+      <BundleResource Include="Resources\Images\bydgoszcz1920_photo2.webp" />
+      <BundleResource Include="Resources\Images\bydgoszcz1920_photo1.webp" />
       <BundleResource Include="Resources\Images\author.webp" />
       <BundleResource Include="Resources\Images\developer-stan.webp" />
       <BundleResource Include="Resources\Images\background.webp" />
@@ -272,15 +276,33 @@
       <BundleResource Include="Resources\Images\developer-mat.webp" />
       <BundleResource Include="Resources\Icons\icon-movie%402x.png" />
       <BundleResource Include="Resources\Icons\icon-movie%403x.png" />
-      <BundleResource Include="Resources\Images\image-movie-1.png" />
-      <BundleResource Include="Resources\Images\image-movie-2.png" />
-      <BundleResource Include="Resources\Images\image-movie-3.png" />
-      <BundleResource Include="Resources\Images\image-music-1.png" />
       <BundleResource Include="Resources\Images\tester-ks.webp" />
       <BundleResource Include="Resources\Images\tester-pc.webp" />
       <BundleResource Include="Resources\Images\tester-es.webp" />
       <BundleResource Include="Resources\Images\tester-lk.webp" />
       <BundleResource Include="Resources\Images\tester-mh.webp" />
+      <BundleResource Include="Resources\Images\bydgoszcz1945_photo1.png" />
+      <BundleResource Include="Resources\Images\bydgoszcz1945_photo2.webp" />
+      <BundleResource Include="Resources\Images\bydgoszcz1945_photo3.webp" />
+      <BundleResource Include="Resources\Images\bydgoszcz1945_photo4.webp" />
+      <BundleResource Include="Resources\Images\bydgoszcz1945_photo5.webp" />
+      <BundleResource Include="Resources\Images\bydgoszcz1945_photo6.webp" />
+      <BundleResource Include="Resources\Images\rejewski_photo1.webp" />
+      <BundleResource Include="Resources\Images\rejewski_photo2.webp" />
+      <BundleResource Include="Resources\Images\rejewski_photo3.webp" />
+      <BundleResource Include="Resources\Images\rejewski_photo4.webp" />
+      <BundleResource Include="Resources\Images\rejewski_photo5.webp" />
+      <BundleResource Include="Resources\Images\rejewski_photo6.webp" />
+      <BundleResource Include="Resources\Images\rejewski_photo7.webp" />
+      <BundleResource Include="Resources\Images\bydgoszcz1945_photo7.webp" />
+      <BundleResource Include="Resources\Images\bydgoszcz1920_media1.webp" />
+      <BundleResource Include="Resources\Images\bydgoszcz1920_media2.webp" />
+      <BundleResource Include="Resources\Images\bydgoszcz1920_media3.webp" />
+      <BundleResource Include="Resources\Images\bydgoszcz1920_media4.webp" />
+      <BundleResource Include="Resources\Images\bydgoszcz1945_media3.webp" />
+      <BundleResource Include="Resources\Images\bydgoszcz1945_media4.webp" />
+      <BundleResource Include="Resources\Images\bydgoszcz1945_media1.webp" />
+      <BundleResource Include="Resources\Images\bydgoszcz1945_media2.webp" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

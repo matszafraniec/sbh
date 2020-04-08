@@ -16,9 +16,7 @@ namespace sbh.Cells
             SetStyles();
 
             LabelDescription.Text = item.Description;
-
             LabelNew.Hidden = item.IsNew ? false : true;
-
         }
 
         private void SetStyles()

@@ -4,12 +4,15 @@ using sbh.Cells;
 using sbh.Classes;
 using System.Collections.Generic;
 using UIKit;
+using sbh.Classes.Enums;
+using sbh.Services;
 
 namespace sbh.ViewControllers
 {
     public partial class CuriositiesVc : UIViewController
     {
         public List<Curiosity> ItemsList;
+        private ContentType chosenContentType;
 
         public CuriositiesVc (IntPtr handle) : base (handle)
         {
@@ -19,45 +22,129 @@ namespace sbh.ViewControllers
         {
             base.ViewDidLoad();
 
-            ItemsList = new List<Curiosity>
+            InitializeData();
+
+            PopulateData();
+
+            //init with Bydgoszcz1920
+            ChosenContentType = ContentType.Bydgoszcz1920;
+        }
+
+        private void InitializeData()
+        {
+            if (ContentServices.Bydgoszcz1920Curiosities == null)
             {
-                new Curiosity { Description = "Od 18 stycznia 1919r. do 21 stycznia 1920 roku trwała Konferencja Pokojowa w Paryżu.\n\n18 lutego 1919r. doszło do potyczki pod Rynarzewem, która zakończyła się zdobyciem niemieckiego pociągu pancernego Panzerzug 22, który następnie został przemianowany na „Danuta”.\n\n20 maja 1919r. do restauracji Sikorskiego znajdującej się przy ul. Gdańskiej wtargnęli członkowie Grenzschutzu i obrzucili granatami znajdujących się we wnętrzu zebranych Polaków.\n\n30 maja 1919r. trzech żołnierzy Grenzschutzu wtargnęło na teren kościoła farnego i obrzucili kamieniami grotę Matki Boskiej z Lourdes.\n\n25 listopada 1919r. podpisano umowę o wycofaniu wojsk z odstąpionych obszarów oraz przekazaniu w ręce polskie zarządu cywilnego nad tymi obszarami.", IsNew = true },
-                new Curiosity { Description = "2 sierpnia 1914 r. w Bydgoszczy ogłoszono stan wojenny. Na lazarety zamieniono większość dużych obiektów w mieście, takich jak choćby sale gimnastyczne. Miesiąc od rozpoczęcia wojny w mieście istniało 10 lazaretów. Do końca 1914 roku ten stan powiększono o 100%, w których to lazaretach leczono jednocześnie nawet 3000 rannych żołnierzy." },
-                new Curiosity { Description = "Przygotowania do powitania Wojska Polskiego w Bydgoszczy trwały już od lipca 1919 roku. Prace dekoracyjne w mieście zlecono bydgoskiemu architektowi Teofilowi Biernackiemu." },
-                new Curiosity { Description = "Przed 1 kwietnia 1920 miasto składało się z pięciu zasadniczych części:\nStare Miasto: Miasto, Zamek, Wyspa Młyńska (dawniej Okole), Przedmieście Kujawskie,\nCzęść północna: Ludwikowo(Jachcice), Stacja kolejowa, Bocianowo I (Wielkie), Bocianowo II (Małe), Przedmieście Gdańskie, Grodztwo Zachodnie, Grodztwo Wschodnie, Cmentarze północne, Koszary północne, Koszary leśne, Szkoła wojenna, Boisko sportowe,\nCzęść zachodnia: Okole (dzisiejsze), Koszary ułańskie, Przedmieście Poznańskie,\nCzęść południowa: Szwederowo, Nowy Dwór, Bielice,\nCzęść wschodnia: Przedmieście Toruńskie, Probostwo, Wzgórze Wolności, Żupy\n\nRejony o największej powierzchni to: Grodztwo Wschodnie – 145 ha, Ludwikowo – 63,5 ha, Bocianowo I (Wielkie) – 60 ha." },
-                new Curiosity { Description = "Nocą z 10 na 11 listopada 1918r. w mieście doszło do starcia grupki niemieckich żołnierzy z patrolem Rady Żołnierskiej. Incydent zakończył kilkoma ofiarami śmiertelnymi i kilkoma rannymi. Bunt wśród jednostek bydgoskiego garnizonu rozgorzał najpierw w 14 Pułku Piechoty im. Hrabiego von Schwerin (3 Pomorski)." },
-                new Curiosity { Description = "Naczelna Rada Ludowa na miasto Bydgoszcz została powołana 16 listopada 1918 roku. Prezesem został wybrany Jan Biziel, sekretarzem Jan Teska, skarbnikiem Józef Milchert, a członkami zarządu Władysław Kużaj i Antoni Czarnecki." },
-                new Curiosity { Description = "20 maja 1919 r. do restauracji Sikorskiego znajdującej się przy u. Gdańskiej wtargnęli członkowie Grenzschutzu i obrzucili granatami znajdujących się we wnętrzu zebranych Polaków.\n30 maja 1919 r. trzech żołnierzy Grenzschutzu wtargnęło na teren kościoła farnego i obrzucili kamieniami grotę Matki Boskiej z Lourdes.\nOd 18 stycznia 1919 r. do 21 stycznia 1920 roku trwała Konferencja Pokojowa w Paryżu.\n18 lutego 1919 r., doszło do potyczki pod Rynarzewem, która zakończyła się zdobyciem niemieckiego pociągu pancernego Panzerzug 22, który następnie został przemianowany na „Danuta”.\n25 listopada 1919 r. podpisano umowę o wycofaniu wojsk z odstąpionych obszarów oraz przekazaniu w ręce polskie zarządu cywilnego nad tymi obszarami." },
-                new Curiosity { Description = "W nocy z 19 na 20 stycznia 1920r. przemalowano w biało-czerwone barwy wszystkie budki strażnicze stojące przy bramach koszarowych i ważniejszych wojskowych obiektach. Środki na zakup farby pochodziły z licznych zbiórek funduszy, w których hojnie uczestniczyli mieszkańcy Bydgoszczy." },
-                new Curiosity { Description = "W bardzo krótkim czasie Bydgoszcz z typowo pruskiego miasta przerodziła się w pełnoprawną polską metropolię. Jeszcze dziesięć lat wcześniej Bydgoszcz była zamieszkiwana przez 19% Polaków. Według danych z przełomu 1928/1929 r. Polacy stanowili 92% populacji miasta." },
-                new Curiosity { Description = "Bydgoskie więzienie zostało przejęte przez podprokuratora przy Sądzie Okręgowym Jarosława Czarlińskiego oraz prokuratora krajowego Alfreda Jossè." },
-                new Curiosity { Description = "Z gabinetu przeznaczonego dla Prezydenta usunięto portret Fryderyka II i zawieszono obraz przedstawiający poznański ratusz. Oczywiście uczyniono to z powodu braku portretów polskich przywódców, a nie uwielbienia do Poznania." },
-                new Curiosity { Description = "20 stycznia 1920 roku w godzinach przedpołudniowych po ponad wiekowej niewoli w granice miasta wkroczyli pierwsi polscy żołnierze. Na Stary Rynek oddział ppłk. Witolda Butlera  wkroczył wraz z 3 szwadronem 2 Pułku Ułanów Wielkopolskich pod dowództwem rtm. Stanisława Zakrzewskiego  punktualnie o godz. 12.00. 22 stycznia 1920r. po uroczystościach na Rynku odbyła się defilada wojsk ulicą Gdańską przed Generałem Muśnickim, który stał na placu Wolności (Weltziena) w otoczeniu swego sztabu i licznej świty." }
-            };
+                ContentServices.Bydgoszcz1920Curiosities = new List<Curiosity>
+                {
+                    new Curiosity { Description = AppStrings.Bydgoszcz1920_Curiosity_1 },
+                    new Curiosity { Description = AppStrings.Bydgoszcz1920_Curiosity_2 },
+                    new Curiosity { Description = AppStrings.Bydgoszcz1920_Curiosity_3 },
+                    new Curiosity { Description = AppStrings.Bydgoszcz1920_Curiosity_4 },
+                    new Curiosity { Description = AppStrings.Bydgoszcz1920_Curiosity_5 },
+                    new Curiosity { Description = AppStrings.Bydgoszcz1920_Curiosity_6 },
+                    new Curiosity { Description = AppStrings.Bydgoszcz1920_Curiosity_7 },
+                    new Curiosity { Description = AppStrings.Bydgoszcz1920_Curiosity_8 },
+                    new Curiosity { Description = AppStrings.Bydgoszcz1920_Curiosity_9 },
+                    new Curiosity { Description = AppStrings.Bydgoszcz1920_Curiosity_10 },
+                    new Curiosity { Description = AppStrings.Bydgoszcz1920_Curiosity_11 },
+                    new Curiosity { Description = AppStrings.Bydgoszcz1920_Curiosity_12 }
+                };
+            }
+
+            if (ContentServices.Bydgoszcz1945Curiosities == null)
+            {
+                ContentServices.Bydgoszcz1945Curiosities = new List<Curiosity>
+                {
+                    new Curiosity { Description = AppStrings.Bydgoszcz1945_Curiosity_1, IsNew = true },
+                    new Curiosity { Description = AppStrings.Bydgoszcz1945_Curiosity_2, IsNew = true },
+                    new Curiosity { Description = AppStrings.Bydgoszcz1945_Curiosity_3, IsNew = true },
+                    new Curiosity { Description = AppStrings.Bydgoszcz1945_Curiosity_4, IsNew = true }
+                };
+            }
+
+            if (ContentServices.MarianRejewskiCuriosities == null)
+            {
+                ContentServices.MarianRejewskiCuriosities = new List<Curiosity>
+                {
+                    new Curiosity { Description = AppStrings.MarianRejewski_Curiosity_1, IsNew = true },
+                    new Curiosity { Description = AppStrings.MarianRejewski_Curiosity_2, IsNew = true },
+                    new Curiosity { Description = AppStrings.MarianRejewski_Curiosity_3, IsNew = true },
+                    new Curiosity { Description = AppStrings.MarianRejewski_Curiosity_4, IsNew = true },
+                    new Curiosity { Description = AppStrings.MarianRejewski_Curiosity_5, IsNew = true },
+                    new Curiosity { Description = AppStrings.MarianRejewski_Curiosity_6, IsNew = true },
+                    new Curiosity { Description = AppStrings.MarianRejewski_Curiosity_7, IsNew = true }
+                };
+            }
+        }
+
+        public void PopulateData(ContentType contentType = ContentType.FirstLoad)
+        {
+            if (chosenContentType == contentType && chosenContentType != ContentType.FirstLoad)
+                return;
+
+            chosenContentType = contentType;
+
+            switch (contentType)
+            {
+                case ContentType.Bydgoszcz1945:
+                    ItemsList = ContentServices.Bydgoszcz1945Curiosities;
+                    break;
+                case ContentType.MarianRejewski:
+                    ItemsList = ContentServices.MarianRejewskiCuriosities;
+                    break;
+                default:
+                    ItemsList = ContentServices.Bydgoszcz1920Curiosities;
+                    break;
+            }
 
             TableViewCuriosityItems.Source = new CuriosityItemsTableViewSource(this);
             TableViewCuriosityItems.ReloadData();
+
+            var indexPath = NSIndexPath.FromItemSection(0, 0);
+            TableViewCuriosityItems.ScrollToRow(indexPath, UITableViewScrollPosition.Top, true);
+        }
+
+        public ContentType ChosenContentType
+        {
+            get => chosenContentType;
+            set
+            {
+                switch (value)
+                {
+                    case ContentType.Bydgoszcz1945:
+                        PopulateData(ContentType.Bydgoszcz1945);
+                        break;
+                    case ContentType.MarianRejewski:
+                        PopulateData(ContentType.MarianRejewski);
+                        break;
+                    default:
+                        PopulateData(ContentType.Bydgoszcz1920);
+                        break;
+                }
+
+                chosenContentType = value;
+            }
         }
 
         internal class CuriosityItemsTableViewSource : UITableViewSource
         {
-            CuriositiesVc _vc;
+            CuriositiesVc vc;
 
             public CuriosityItemsTableViewSource(CuriositiesVc vc)
             {
-                _vc = vc;
+                this.vc = vc;
             }
 
             public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
             {
                 var cell = (CuriosityItemCell)tableView.DequeueReusableCell("CuriosityItemCell");
-                cell.Setup(_vc.ItemsList[indexPath.Row]);
+                cell.Setup(vc.ItemsList[indexPath.Row]);
                 return cell;
             }
 
             public override nint RowsInSection(UITableView tableview, nint section)
             {
-                return _vc.ItemsList.Count;
+                return vc.ItemsList.Count;
             }
         }
     }

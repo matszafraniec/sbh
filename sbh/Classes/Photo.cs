@@ -7,5 +7,6 @@ namespace sbh.Classes
         public int Id { get; set; }
         public UIImage Image { get; set; }
         public string Description { get; set; }
+        public bool IsNew { get; set; }
     }
 }

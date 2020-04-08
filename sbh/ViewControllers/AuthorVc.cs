@@ -15,6 +15,11 @@ namespace sbh.ViewControllers
         {
         }
 
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
+        }
+
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();

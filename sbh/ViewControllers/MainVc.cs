@@ -11,6 +11,8 @@ namespace sbh.ViewControllers
     {
         UISwipeGestureRecognizer LeadingSwipeRecognizer;
         private PhotosVc PhotosVc;
+        private MediaVc MediaVc;
+        private CuriositiesVc CuriositiesVc;
 
         public MainVc (IntPtr handle) : base (handle)
         {
@@ -23,10 +25,11 @@ namespace sbh.ViewControllers
             SideMenuControl.MenuItemSelected += SideMenuControl_OnMenuItemSelected;
             SideMenuControl.ClickedOutside += SideMenuControl_OnClickedOutside;
             CustomTopBar.MenuIconActivated += CustomTopBar_OnMenuIconActivated;
+            CustomTopBar.MenuContentTypeActivated += CustomTopBar_OnMenuContentTypeActivated;
 
             LeadingSwipeRecognizer = new UISwipeGestureRecognizer(() =>
             {
-                if (_sideMenuVisibility)
+                if (sideMenuVisibility)
                     SideMenuVisibility = false;
                 else
                     SideMenuVisibility = true;
@@ -73,11 +76,15 @@ namespace sbh.ViewControllers
 
             if (segue.Identifier == "PhotosSegue")
                 PhotosVc = segue.DestinationViewController as PhotosVc;
+            else if (segue.Identifier == "MediaSegue")
+                MediaVc = segue.DestinationViewController as MediaVc;
+            else if (segue.Identifier == "CuriositiesSegue")
+                CuriositiesVc = segue.DestinationViewController as CuriositiesVc;
         }
 
         public override void ViewWillDisappear(bool animated)
         {
-            if (_sideMenuVisibility)
+            if (sideMenuVisibility)
                 SideMenuVisibility = false;
 
             base.ViewWillDisappear(animated);
@@ -86,7 +93,7 @@ namespace sbh.ViewControllers
         private void SetStyles()
         {
             CustomTopBar.SetTitle("Główna");
-            CurrentPageTitle = "Główna";
+            CustomTopBar.SetContentTypeTitle(ContentType.Bydgoszcz1920);
             CustomTopBar.BackgroundColor = AppColors.DarkRed;
 
             SideMenuControl.BackgroundColor = AppColors.WhiteSmoke;
@@ -94,26 +101,61 @@ namespace sbh.ViewControllers
             ViewSideMenuOverlay.Hidden = ViewTopBarOverlay.Hidden = AuthorContainerView.Hidden = CuriositiesContainerView.Hidden = MuseumContainerView.Hidden = MediaContainerView.Hidden = PhotosContainerView.Hidden = true;
             ViewSideMenuOverlay.Alpha = ViewTopBarOverlay.Alpha = 0;
 
-            TextViewDescription.Text = "Aplikacja ma za zadanie przybliżyć ważne wydarzenia z życia Bydgoszczy, które przez lata popadły w zapomnienie. Piękna historia miasta, nietuzinkowe postaci – przyjrzyj się uważnie tym unikalnym zdjęciom, obejrzyj filmy i wysłuchaj muzyki. To wszystko w aplikacji pod nazwą: Sekrety Bydgoskiej Historii. Projekt będzie rozwijał się o kolejne sekrety, więc wróć tu koniecznie.\n \nKrzysztof Drozdowski";
+            TextViewDescription.Text = "100 lat Bydgoszczy w Polsce\n\nAplikacja ma za zadanie przybliżyć ważne wydarzenia z życia Bydgoszczy, które przez lata popadły w zapomnienie. Piękna historia miasta, nietuzinkowe postaci – przyjrzyj się uważnie tym unikalnym zdjęciom, obejrzyj filmy i wysłuchaj muzyki. To wszystko w aplikacji pod nazwą: Sekrety Bydgoskiej Historii. Projekt będzie rozwijał się o kolejne sekrety, więc wróć tu koniecznie.\n \nKrzysztof Drozdowski";
             TextViewDescription.Font = UIFont.ItalicSystemFontOfSize(16);
 
             MainViewWrapper.Hidden = false;
         }
 
+        private void ChangeContentType(ContentType contentType)
+        {
+            PhotosVc.ChosenContentType = contentType;
+            MediaVc.ChosenContentType = contentType;
+            CuriositiesVc.ChosenContentType = contentType;
+        }
+
         #region CustomTopBar behaviour
         private void CustomTopBar_OnMenuIconActivated(object sender, bool e)
         {
-            if (_sideMenuVisibility)
+            if (sideMenuVisibility)
                 SideMenuVisibility = false;
             else
                 SideMenuVisibility = true;
+        }
+
+        private void CustomTopBar_OnMenuContentTypeActivated(object sender, bool e)
+        {
+            if(e)
+            {
+                var alert = UIAlertController.Create("", "Wybierz rodzaj treści", UIAlertControllerStyle.ActionSheet);
+                alert.AddAction(UIAlertAction.Create("Bydgoszcz 1920", UIAlertActionStyle.Default,
+                    action =>
+                    {
+                        ChangeContentType(ContentType.Bydgoszcz1920);
+                        CustomTopBar.SetContentTypeTitle(ContentType.Bydgoszcz1920);
+                    }));
+                alert.AddAction(UIAlertAction.Create("Bydgoszcz 1945", UIAlertActionStyle.Default,
+                    action =>
+                    {
+                        ChangeContentType(ContentType.Bydgoszcz1945);
+                        CustomTopBar.SetContentTypeTitle(ContentType.Bydgoszcz1945);
+                    }));
+                alert.AddAction(UIAlertAction.Create("Marian Rejewski", UIAlertActionStyle.Default,
+                    action =>
+                    {
+                        ChangeContentType(ContentType.MarianRejewski);
+                        CustomTopBar.SetContentTypeTitle(ContentType.MarianRejewski);
+                    }));
+
+                PresentViewController(alert, true, null);
+            }
         }
         #endregion
 
         #region SideMenuControl behaviour and navigation
         private void SideMenuControl_OnClickedOutside(object sender, EventArgs e)
         {
-            if (_sideMenuVisibility)
+            if (sideMenuVisibility)
                 SideMenuVisibility = false;
         }
 
@@ -124,59 +166,62 @@ namespace sbh.ViewControllers
                 case PageName.Photos:
                     MainViewWrapper.Hidden = AuthorContainerView.Hidden = MediaContainerView.Hidden = MuseumContainerView.Hidden = CuriositiesContainerView.Hidden = true;
                     PhotosContainerView.Hidden = SideMenuVisibility = false;
+                    CustomTopBar.ContentTypeButtonIsVisible = true;
                     CurrentPageTitle = "Fotografie";
                     break;
                 case PageName.Media:
                     MainViewWrapper.Hidden = PhotosContainerView.Hidden = AuthorContainerView.Hidden = MuseumContainerView.Hidden = CuriositiesContainerView.Hidden = true;
                     MediaContainerView.Hidden = SideMenuVisibility = false;
+                    CustomTopBar.ContentTypeButtonIsVisible = true;
                     CurrentPageTitle = "Media";
                     break;
                 case PageName.Museum:
                     MainViewWrapper.Hidden = AuthorContainerView.Hidden = MediaContainerView.Hidden = CuriositiesContainerView.Hidden = PhotosContainerView.Hidden = true;
-                    MuseumContainerView.Hidden = SideMenuVisibility = false;
+                    MuseumContainerView.Hidden = SideMenuVisibility = CustomTopBar.ContentTypeButtonIsVisible = false;
                     CurrentPageTitle = "Odwiedź koniecznie";
                     break;
                 case PageName.Home:
                     CuriositiesContainerView.Hidden = AuthorContainerView.Hidden = MediaContainerView.Hidden = MuseumContainerView.Hidden = PhotosContainerView.Hidden = true;
-                    MainViewWrapper.Hidden = SideMenuVisibility = false;
+                    MainViewWrapper.Hidden = SideMenuVisibility = CustomTopBar.ContentTypeButtonIsVisible = false;
                     CurrentPageTitle = "Główna";
                     break;
                 case PageName.Curiosities:
                     MainViewWrapper.Hidden = AuthorContainerView.Hidden = MediaContainerView.Hidden = MuseumContainerView.Hidden = PhotosContainerView.Hidden = true;
                     CuriositiesContainerView.Hidden = SideMenuVisibility = false;
+                    CustomTopBar.ContentTypeButtonIsVisible = true;
                     CurrentPageTitle = "Ciekawostki";
                     break;
                 case PageName.Author:
                     MainViewWrapper.Hidden = CuriositiesContainerView.Hidden = MediaContainerView.Hidden = MuseumContainerView.Hidden = PhotosContainerView.Hidden = true;
-                    AuthorContainerView.Hidden = SideMenuVisibility = false;
+                    AuthorContainerView.Hidden = SideMenuVisibility = CustomTopBar.ContentTypeButtonIsVisible = false;
                     CurrentPageTitle = "Autor";
                     break;
             }
         }
 
-        private bool _sideMenuVisibility;
-        private bool _sideMenuDuringAnimation;
-        private string _currentPageTitle;
+        private bool sideMenuVisibility;
+        private bool sideMenuDuringAnimation;
+        private string currentPageTitle;
 
         private string CurrentPageTitle
         {
-            get => _currentPageTitle;
+            get => currentPageTitle;
             set
             {
                 CustomTopBar.SetTitle(value);
-                _currentPageTitle = value;
+                currentPageTitle = value;
             }
         }
 
         private bool SideMenuVisibility
         {
-            get => _sideMenuVisibility;
+            get => sideMenuVisibility;
             set
             {
-                if (_sideMenuDuringAnimation || _sideMenuVisibility == value)
+                if (sideMenuDuringAnimation || sideMenuVisibility == value)
                     return;
-                _sideMenuDuringAnimation = true;
-                _sideMenuVisibility = value;
+                sideMenuDuringAnimation = true;
+                sideMenuVisibility = value;
 
                 if (value) ViewSideMenuOverlay.Hidden = false;
                 UIView.Animate(0.35, 0.0, UIViewAnimationOptions.CurveEaseOut, () =>
@@ -198,7 +243,7 @@ namespace sbh.ViewControllers
                     View.LayoutIfNeeded();
                 }, () =>
                 {
-                    _sideMenuDuringAnimation = false;
+                    sideMenuDuringAnimation = false;
                     if (!value) ViewSideMenuOverlay.Hidden = true;
                 });
             }

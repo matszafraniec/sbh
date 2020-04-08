@@ -22,6 +22,9 @@ namespace sbh.Cells
 		UIKit.UILabel LabelMediaNumber { get; set; }
 
 		[Outlet]
+		UIKit.UILabel LabelNew { get; set; }
+
+		[Outlet]
 		UIKit.UIView ViewMediaNumberWrapper { get; set; }
 		
 		void ReleaseDesignerOutlets ()
@@ -31,9 +34,9 @@ namespace sbh.Cells
 				ImageViewMediaPhoto = null;
 			}
 
-			if (ViewMediaNumberWrapper != null) {
-				ViewMediaNumberWrapper.Dispose ();
-				ViewMediaNumberWrapper = null;
+			if (LabelDescription != null) {
+				LabelDescription.Dispose ();
+				LabelDescription = null;
 			}
 
 			if (LabelMediaNumber != null) {
@@ -41,9 +44,14 @@ namespace sbh.Cells
 				LabelMediaNumber = null;
 			}
 
-			if (LabelDescription != null) {
-				LabelDescription.Dispose ();
-				LabelDescription = null;
+			if (ViewMediaNumberWrapper != null) {
+				ViewMediaNumberWrapper.Dispose ();
+				ViewMediaNumberWrapper = null;
+			}
+
+			if (LabelNew != null) {
+				LabelNew.Dispose ();
+				LabelNew = null;
 			}
 		}
 	}

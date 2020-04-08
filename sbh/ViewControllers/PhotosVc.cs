@@ -1,9 +1,9 @@
-using CoreGraphics;
-using CoreImage;
 using Foundation;
 using sbh.Cells;
 using sbh.Classes;
+using sbh.Classes.Enums;
 using sbh.Helpers;
+using sbh.Services;
 using System;
 using System.Collections.Generic;
 using UIKit;
@@ -13,9 +13,10 @@ namespace sbh.ViewControllers
 {
     public partial class PhotosVc : UIViewController
     {
-        WebPCodec imageDecoder;
-        public List<Photo> ItemsList;
+        readonly WebPCodec imageDecoder;
+        private List<Photo> ItemsList;
         public event EventHandler<bool> PhotoZooming;
+        private ContentType chosenContentType;
 
         public PhotosVc(IntPtr handle) : base(handle)
         {
@@ -25,50 +26,13 @@ namespace sbh.ViewControllers
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            SetStyles();
 
-            ItemsList = new List<Photo>
-            {
-                new Photo
-                {
-                    Id = 1,
-                    Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/photo1", "webp")),
-                    Description = "Powitanie pierwszych oddziałów wojska polskiego po wkroczeniu do miasta w dniu 20 stycznia 1920r.  Na środku stoi ppłk Witold Butler dowódca oddziału saperów oraz pierwszy wojskowy komendant miasta. Przed nim stoją przedstawiciele władz miasta i Podkomisariatu Naczelnej Rady Ludowej."
-                },
-                new Photo
-                {
-                    Id = 2,
-                    Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/photo2", "webp")),
-                    Description = "Pierwsze oddziały 15 Dywizji Piechoty oraz 16 Pułku Ułanów Wielkopolskich po wkroczeniu na płytę Starego Rynku.",
-                },
-                new Photo
-                {
-                    Id = 3,
-                    Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/photo3", "webp")),
-                    Description = "Orkiestra 16 Pułku Ułanów Wielkopolskich podczas defilady na ul. Gdańskiej w dniu 22 stycznia 1920 roku. Defiladę przyjmował dowódca Frontu Wielkopolskiego gen. Józef Dowbor-Muśnicki.",
-                },
-                new Photo
-                {
-                    Id = 4,
-                    Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/photo4", "webp")),
-                    Description = "22 stycznia 1920r. Zebrane wojska wielkopolskie na płycie Starego Rynku podczas polowej mszy świętej.",
-                },
-                new Photo
-                {
-                    Id = 5,
-                    Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/photo5", "webp")),
-                    Description = "Jan Biziel podczas przemówienia do zebranych mieszkańców miasta w trakcie powitania gen. Józefa Dowbora-Muśnickiego w dniu 22 stycznia 1920r.",
-                },
-                new Photo
-                {
-                    Id = 6,
-                    Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/photo6", "webp")),
-                    Description = "Generał Józef Dowbor-Muśnicki w trakcie przemówienia po mszy św. polowej odprawionej na płycie Starego Rynku w dniu 22 stycznia 1920r.",
-                },
-            };
+            InitializeData();
 
-            TableViewPhotoItems.Source = new PhotoItemsTableViewSource(this);
-            TableViewPhotoItems.ReloadData();
+            PopulateData();
+
+            //init with Bydgoszcz1920
+            ChosenContentType = ContentType.Bydgoszcz1920;
 
             ScrollViewImageZooming.ViewForZoomingInScrollView += (UIScrollView scrollView) => { return ImageViewZooming; };
 
@@ -85,6 +49,8 @@ namespace sbh.ViewControllers
                 ScrollViewImageZooming.ZoomScale = 1;
                 PhotoZooming?.Invoke(this, false);
             }));
+
+            SetStyles();
         }
 
         private void SetStyles()
@@ -97,10 +63,217 @@ namespace sbh.ViewControllers
             ViewOverlay.Alpha = ScrollViewImageZooming.Alpha = 0.3f;
         }
 
+        public void PopulateData(ContentType contentType = ContentType.FirstLoad)
+        {
+            if (chosenContentType == contentType && chosenContentType != ContentType.FirstLoad)
+                return;
+
+            chosenContentType = contentType;
+
+            switch(contentType)
+            {
+                case ContentType.Bydgoszcz1945:
+                    ItemsList = ContentServices.Bydgoszcz1945Photos;
+                    break;
+                case ContentType.MarianRejewski:
+                    ItemsList = ContentServices.MarianRejewskiPhotos;
+                    break;
+                default:
+                    ItemsList = ContentServices.Bydgoszcz1920Photos;
+                    break;
+            }
+
+            TableViewPhotoItems.Source = new PhotoItemsTableViewSource(this);
+            TableViewPhotoItems.ReloadData();
+
+            var indexPath = NSIndexPath.FromItemSection(0, 0);
+            TableViewPhotoItems.ScrollToRow(indexPath, UITableViewScrollPosition.Top, true);
+        }
+
+        private void InitializeData()
+        {
+            if(ContentServices.Bydgoszcz1920Photos == null)
+            {
+                ContentServices.Bydgoszcz1920Photos = new List<Photo>
+                {
+                    new Photo
+                    {
+                        Id = 1,
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1920_photo1", "webp")),
+                        Description = AppStrings.Bydgoszcz1920_Photo_1
+                    },
+                    new Photo
+                    {
+                        Id = 2,
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1920_photo2", "webp")),
+                        Description = AppStrings.Bydgoszcz1920_Photo_2
+                    },
+                    new Photo
+                    {
+                        Id = 3,
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1920_photo3", "webp")),
+                        Description = AppStrings.Bydgoszcz1920_Photo_3
+                    },
+                    new Photo
+                    {
+                        Id = 4,
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1920_photo4", "webp")),
+                        Description = AppStrings.Bydgoszcz1920_Photo_4
+                    },
+                    new Photo
+                    {
+                        Id = 5,
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1920_photo5", "webp")),
+                        Description = AppStrings.Bydgoszcz1920_Photo_5
+                    },
+                    new Photo
+                    {
+                        Id = 6,
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1920_photo6", "webp")),
+                        Description = AppStrings.Bydgoszcz1920_Photo_6,
+                    }
+                };
+            }
+
+            if (ContentServices.Bydgoszcz1945Photos == null)
+            {
+                ContentServices.Bydgoszcz1945Photos = new List<Photo>
+                {
+                    new Photo
+                    {
+                        Id = 1,
+                        Image = UIImage.FromBundle("Images/bydgoszcz1945_photo1"),
+                        Description = AppStrings.Bydgoszcz1945_Photo_1,
+                        IsNew = true
+                    },
+                    new Photo
+                    {
+                        Id = 2,
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1945_photo2", "webp")),
+                        Description = AppStrings.Bydgoszcz1945_Photo_2,
+                        IsNew = true
+                    },
+                    new Photo
+                    {
+                        Id = 3,
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1945_photo3", "webp")),
+                        Description = AppStrings.Bydgoszcz1945_Photo_3,
+                        IsNew = true
+                    },
+                    new Photo
+                    {
+                        Id = 4,
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1945_photo4", "webp")),
+                        Description = AppStrings.Bydgoszcz1945_Photo_4,
+                        IsNew = true
+                    },
+                    new Photo
+                    {
+                        Id = 5,
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1945_photo5", "webp")),
+                        Description = AppStrings.Bydgoszcz1945_Photo_5,
+                        IsNew = true
+                    },
+                    new Photo
+                    {
+                        Id = 6,
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1945_photo6", "webp")),
+                        Description = AppStrings.Bydgoszcz1945_Photo_6,
+                        IsNew = true
+                    },
+                    new Photo
+                    {
+                        Id = 7,
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1945_photo7", "webp")),
+                        Description = AppStrings.Bydgoszcz1945_Photo_7,
+                        IsNew = true
+                    }
+                };
+            }
+
+            if (ContentServices.MarianRejewskiPhotos == null)
+            {
+                ContentServices.MarianRejewskiPhotos = new List<Photo>
+                {
+                    new Photo
+                    {
+                        Id = 1,
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/rejewski_photo1", "webp")),
+                        Description = AppStrings.MarianRejewski_Photo_1,
+                        IsNew = true
+                    },
+                    new Photo
+                    {
+                        Id = 2,
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/rejewski_photo2", "webp")),
+                        Description = AppStrings.MarianRejewski_Photo_2,
+                        IsNew = true
+                    },
+                    new Photo
+                    {
+                        Id = 3,
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/rejewski_photo3", "webp")),
+                        Description = AppStrings.MarianRejewski_Photo_3,
+                        IsNew = true
+                    },
+                    new Photo
+                    {
+                        Id = 4,
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/rejewski_photo4", "webp")),
+                        Description = AppStrings.MarianRejewski_Photo_4,
+                        IsNew = true
+                    },
+                    new Photo
+                    {
+                        Id = 5,
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/rejewski_photo5", "webp")),
+                        Description = AppStrings.MarianRejewski_Photo_5,
+                        IsNew = true
+                    },
+                    new Photo
+                    {
+                        Id = 6,
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/rejewski_photo6", "webp")),
+                        Description = AppStrings.MarianRejewski_Photo_6,
+                        IsNew = true
+                    },
+                    new Photo
+                    {
+                        Id = 7,
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/rejewski_photo7", "webp")),
+                        Description = AppStrings.MarianRejewski_Photo_7,
+                        IsNew = true
+                    }
+                };
+            }
+        }
+
+        public ContentType ChosenContentType
+        {
+            get => chosenContentType;
+            set
+            {
+                switch (value)
+                {
+                    case ContentType.Bydgoszcz1945:
+                        PopulateData(ContentType.Bydgoszcz1945);
+                        break;
+                    case ContentType.MarianRejewski:
+                        PopulateData(ContentType.MarianRejewski);
+                        break;
+                    default:
+                        PopulateData(ContentType.Bydgoszcz1920);
+                        break;
+                }
+
+                chosenContentType = value;
+            }
+        }
+
         internal class PhotoItemsTableViewSource : UITableViewSource
         {
-            PhotosVc _vc;
-            private readonly List<Item> _plainItems;
+            readonly PhotosVc vc;
+            private readonly List<Item> plainItems;
             public enum ItemType { Photo, Footer }
             public class Item
             {
@@ -111,22 +284,23 @@ namespace sbh.ViewControllers
 
             public PhotoItemsTableViewSource(PhotosVc vc)
             {
-                _vc = vc;
+                this.vc = vc;
 
-                _plainItems = new List<Item>();
+                plainItems = new List<Item>();
 
-                foreach(var photo in _vc.ItemsList)
-                    _plainItems.Add(new Item { Type = ItemType.Photo, Photo = photo });
+                foreach(var photo in vc.ItemsList)
+                    plainItems.Add(new Item { Type = ItemType.Photo, Photo = photo });
 
-                _plainItems.Add(new Item { Type = ItemType.Footer });
+                if(vc.chosenContentType == ContentType.FirstLoad || vc.chosenContentType == ContentType.Bydgoszcz1920)
+                    plainItems.Add(new Item { Type = ItemType.Footer });
             }
 
             public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
             {
-                if(_plainItems[indexPath.Row].Type == ItemType.Photo)
+                if(plainItems[indexPath.Row].Type == ItemType.Photo)
                 {
                     var cell = (PhotoItemCell)tableView.DequeueReusableCell("PhotoItemCell");
-                    cell.Setup(_vc.ItemsList[indexPath.Row]);
+                    cell.Setup(vc.ItemsList[indexPath.Row]);
                     return cell;
                 }
                 else
@@ -139,26 +313,29 @@ namespace sbh.ViewControllers
 
             public override nint RowsInSection(UITableView tableview, nint section)
             {
-                return _vc.ItemsList.Count + 1;
+                if (vc.chosenContentType == ContentType.FirstLoad || vc.chosenContentType == ContentType.Bydgoszcz1920)
+                    return vc.ItemsList.Count + 1;
+                else
+                    return vc.ItemsList.Count;
             }
 
             public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
             {
                 tableView.DeselectRow(indexPath, true);
 
-                if (_plainItems[indexPath.Row].Type == ItemType.Footer)
+                if (plainItems[indexPath.Row].Type == ItemType.Footer)
                     return;
 
-                _vc.ImageViewZooming.Image = _vc.ItemsList[indexPath.Row].Image;
-                _vc.ScrollViewImageZooming.Hidden = _vc.ViewOverlay.Hidden = false;
+                vc.ImageViewZooming.Image = vc.ItemsList[indexPath.Row].Image;
+                vc.ScrollViewImageZooming.Hidden = vc.ViewOverlay.Hidden = false;
 
                 UIView.Animate(0.4, () =>
                 {
-                    _vc.ScrollViewImageZooming.Alpha = 1;
-                    _vc.ViewOverlay.Alpha = 0.85f;
-                    _vc.View.LayoutIfNeeded();
+                    vc.ScrollViewImageZooming.Alpha = 1;
+                    vc.ViewOverlay.Alpha = 0.85f;
+                    vc.View.LayoutIfNeeded();
                 }); 
-                _vc.PhotoZooming?.Invoke(this, true);
+                vc.PhotoZooming?.Invoke(this, true);
             }
         }
     }

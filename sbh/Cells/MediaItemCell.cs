@@ -19,6 +19,7 @@ namespace sbh.Cells
             ImageViewMediaPhoto.Image = item.Image;
             LabelMediaNumber.Text = item.Id.ToString();
             LabelDescription.Text = item.Description;
+            LabelNew.Hidden = item.IsNew ? false : true;
         }
 
         private void SetStyles()
@@ -30,6 +31,10 @@ namespace sbh.Cells
             ViewMediaNumberWrapper.BackgroundColor = AppColors.DarkRed;
             ViewMediaNumberWrapper.Layer.CornerRadius = 20;
             ViewMediaNumberWrapper.Layer.MaskedCorners = CACornerMask.MinXMinYCorner;
+
+            LabelNew.Font = UIFont.SystemFontOfSize(16);
+            LabelNew.TextColor = AppColors.NaturalBlue;
+            LabelNew.Text = "Nowe";
 
             SelectionStyle = UITableViewCellSelectionStyle.Blue;
         }
