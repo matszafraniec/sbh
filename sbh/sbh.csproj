@@ -31,8 +31,8 @@
         <DeviceSpecificBuild>false</DeviceSpecificBuild>
         <MtouchFastDev>true</MtouchFastDev>
         <MtouchExtraArgs>--optimize=-remove-dynamic-registrar --registrar:static</MtouchExtraArgs>
-<CodesignKey>iPhone Developer: mat.szafraniec@outlook.com (ZYS25U8A5Q)</CodesignKey>
-<CodesignProvision>VS: WildCard Development</CodesignProvision>
+<CodesignKey>Apple Development: mat.szafraniec@outlook.com (ZYS25U8A5Q)</CodesignKey>
+<CodesignProvision>VS: pl.matszafraniec.SBH Development</CodesignProvision>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
         <DebugType>none</DebugType>
@@ -46,8 +46,8 @@
     <DeviceSpecificBuild></DeviceSpecificBuild>
     <MtouchExtraArgs>--optimize=-remove-dynamic-registrar</MtouchExtraArgs>
     <MtouchUseLlvm>true</MtouchUseLlvm>
-    <CodesignProvision>VS: WildCard Development</CodesignProvision>
-    <CodesignKey>iPhone Developer: mat.szafraniec@outlook.com (ZYS25U8A5Q)</CodesignKey>
+    <CodesignProvision>VS: pl.matszafraniec.SBH Development</CodesignProvision>
+    <CodesignKey>Apple Development: mat.szafraniec@outlook.com (ZYS25U8A5Q)</CodesignKey>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
         <DebugSymbols>true</DebugSymbols>
@@ -63,7 +63,7 @@
     <MtouchLink>SdkOnly</MtouchLink>
         <MtouchArch>ARM64</MtouchArch>
         <CodesignEntitlements>EntitlementsDebug.plist</CodesignEntitlements>
-        <CodesignKey>iPhone Developer: mat.szafraniec@outlook.com (ZYS25U8A5Q)</CodesignKey>
+        <CodesignKey>Apple Development: mat.szafraniec@outlook.com (ZYS25U8A5Q)</CodesignKey>
         <MtouchDebug>true</MtouchDebug>
 <MtouchExtraArgs>--optimize=-remove-dynamic-registrar</MtouchExtraArgs>
 <DeviceSpecificBuild>false</DeviceSpecificBuild>
@@ -79,11 +79,11 @@
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <MtouchLink>SdkOnly</MtouchLink>
         <MtouchArch>ARM64</MtouchArch>
-        <CodesignKey>Apple Distribution: Mateusz Szafraniec (RJ6T66Z6F7)</CodesignKey>
+        <CodesignKey>Apple Development: mat.szafraniec@outlook.com (ZYS25U8A5Q)</CodesignKey>
         <MtouchExtraArgs>--optimize=-remove-dynamic-registrar</MtouchExtraArgs>
         <MtouchUseLlvm>true</MtouchUseLlvm>
         <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-        <CodesignProvision>SBH AppStore 2020</CodesignProvision>
+        <CodesignProvision>VS: pl.matszafraniec.SBH Development</CodesignProvision>
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="System" />
@@ -299,7 +299,6 @@
       <BundleResource Include="Resources\Images\Rejewski\photo6.webp" />
       <BundleResource Include="Resources\Images\Rejewski\photo7.webp" />
       <BundleResource Include="Resources\Images\Authors\author.webp" />
-      <BundleResource Include="Resources\Images\Authors\background.webp" />
       <BundleResource Include="Resources\Images\Authors\developer-mat.webp" />
       <BundleResource Include="Resources\Images\Authors\developer-stan.webp" />
       <BundleResource Include="Resources\Images\Authors\tester-es.webp" />
@@ -316,6 +315,7 @@
       <BundleResource Include="Resources\Images\Rejewski\media7.webp" />
       <BundleResource Include="Resources\Images\Rejewski\media8.webp" />
       <BundleResource Include="Resources\Images\Rejewski\media9.webp" />
+      <BundleResource Include="Resources\Images\background.webp" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
