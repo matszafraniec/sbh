@@ -32,6 +32,9 @@ namespace sbh.CustomControls
 
 		[Outlet]
 		UIKit.UIView ViewMenuIcon { get; set; }
+
+		[Outlet]
+		UIKit.UIView ViewOverlay { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
@@ -60,14 +63,19 @@ namespace sbh.CustomControls
 				ViewBackground = null;
 			}
 
+			if (ViewContentType != null) {
+				ViewContentType.Dispose ();
+				ViewContentType = null;
+			}
+
 			if (ViewMenuIcon != null) {
 				ViewMenuIcon.Dispose ();
 				ViewMenuIcon = null;
 			}
 
-			if (ViewContentType != null) {
-				ViewContentType.Dispose ();
-				ViewContentType = null;
+			if (ViewOverlay != null) {
+				ViewOverlay.Dispose ();
+				ViewOverlay = null;
 			}
 		}
 	}

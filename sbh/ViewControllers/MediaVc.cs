@@ -46,7 +46,7 @@ namespace sbh
                     {
                         Id = 1,
                         Description = AppStrings.Bydgoszcz1920_Media_1,
-                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1920_media1", "webp")),
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Bydgoszcz1920/media1", "webp")),
                         ContentIdentifier = "http://www.youtube.com/watch?v=JD5ths5Jusg",
                         Type = "Filmy"
                     },
@@ -54,7 +54,7 @@ namespace sbh
                     {
                         Id = 2,
                         Description = AppStrings.Bydgoszcz1920_Media_2,
-                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1920_media2", "webp")),
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Bydgoszcz1920/media2", "webp")),
                         ContentIdentifier = "http://www.youtube.com/watch?v=ZpCPobW187k",
                         Type = "Filmy"
                     },
@@ -62,7 +62,7 @@ namespace sbh
                     {
                         Id = 3,
                         Description = AppStrings.Bydgoszcz1920_Media_3,
-                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1920_media3", "webp")),
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Bydgoszcz1920/media3", "webp")),
                         ContentIdentifier = "http://www.youtube.com/watch?v=WfSphW3-hzs",
                         Type = "Filmy"
                     },
@@ -70,7 +70,7 @@ namespace sbh
                     {
                         Id = 4,
                         Description = AppStrings.Bydgoszcz1920_Media_4,
-                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1920_media4", "webp")),
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Bydgoszcz1920/media4", "webp")),
                         ContentIdentifier = "https://soundcloud.com/ciecierski/sets/bydgoszcz100",
                         Type = "Muzyka"
                     }
@@ -85,7 +85,7 @@ namespace sbh
                     {
                         Id = 1,
                         Description = AppStrings.Bydgoszcz1945_Media_1,
-                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1945_media1", "webp")),
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Bydgoszcz1945/media1", "webp")),
                         ContentIdentifier = "https://youtu.be/HnIS2twdA_0",
                         Type = "Filmy",
                         IsNew = true
@@ -94,7 +94,7 @@ namespace sbh
                     {
                         Id = 2,
                         Description = AppStrings.Bydgoszcz1945_Media_2,
-                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1945_media2", "webp")),
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Bydgoszcz1945/media2", "webp")),
                         ContentIdentifier = "https://youtu.be/E_hUIuWVBGw",
                         Type = "Filmy",
                         IsNew = true
@@ -103,7 +103,7 @@ namespace sbh
                     {
                         Id = 3,
                         Description = AppStrings.Bydgoszcz1945_Media_3,
-                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1945_media3", "webp")),
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Bydgoszcz1945/media3", "webp")),
                         ContentIdentifier = "https://youtu.be/I5ILcG_oAek",
                         Type = "Filmy",
                         IsNew = true
@@ -112,7 +112,7 @@ namespace sbh
                     {
                         Id = 4,
                         Description = AppStrings.Bydgoszcz1945_Media_4,
-                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1945_media4", "webp")),
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Bydgoszcz1945/media4", "webp")),
                         ContentIdentifier = "https://m.soundcloud.com/ciecierski/bydgoszcz1945",
                         Type = "Muzyka",
                         IsNew = true
@@ -124,13 +124,87 @@ namespace sbh
             {
                 ContentServices.MarianRejewskiMedia = new List<Media>
                 {
-                    //new Curiosity { Description = AppStrings.MarianRejewski_Curiosity_1, IsNew = true },
-                    //new Curiosity { Description = AppStrings.MarianRejewski_Curiosity_2, IsNew = true },
-                    //new Curiosity { Description = AppStrings.MarianRejewski_Curiosity_3, IsNew = true },
-                    //new Curiosity { Description = AppStrings.MarianRejewski_Curiosity_4, IsNew = true },
-                    //new Curiosity { Description = AppStrings.MarianRejewski_Curiosity_5, IsNew = true },
-                    //new Curiosity { Description = AppStrings.MarianRejewski_Curiosity_6, IsNew = true },
-                    //new Curiosity { Description = AppStrings.MarianRejewski_Curiosity_7, IsNew = true }
+                    new Media
+                    {
+                        Id = 1,
+                        Description = AppStrings.MarianRejewski_Media1,
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Rejewski/media1", "webp")),
+                        ContentIdentifier = "https://youtu.be/rGRu-D8j6ts",
+                        Type = "Filmy",
+                        IsNew = true
+                    },
+                    new Media
+                    {
+                        Id = 2,
+                        Description = AppStrings.MarianRejewski_Media2,
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Rejewski/media2", "webp")),
+                        ContentIdentifier = "https://youtu.be/E53FkqwpHd0",
+                        Type = "Filmy",
+                        IsNew = true
+                    },
+                    new Media
+                    {
+                        Id = 3,
+                        Description = AppStrings.MarianRejewski_Media3,
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Rejewski/media3", "webp")),
+                        ContentIdentifier = "https://youtu.be/UBlVONSA5ms",
+                        Type = "Filmy",
+                        IsNew = true
+                    },
+                    new Media
+                    {
+                        Id = 4,
+                        Description = AppStrings.MarianRejewski_Media4,
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Rejewski/media4", "webp")),
+                        ContentIdentifier = "https://youtu.be/JQk7AuJMIjE",
+                        Type = "Filmy",
+                        IsNew = true
+                    },
+                    new Media
+                    {
+                        Id = 5,
+                        Description = AppStrings.MarianRejewski_Media5,
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Rejewski/media5", "webp")),
+                        ContentIdentifier = "https://vod.tvp.pl/website/tajemnica-enigmy,40536155",
+                        Type = "Filmy",
+                        IsNew = true
+                    },
+                    new Media
+                    {
+                        Id = 6,
+                        Description = AppStrings.MarianRejewski_Media6,
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Rejewski/media6", "webp")),
+                        ContentIdentifier = "https://vod.tvp.pl/video/z-bliska,polscy-pogromcy-enigmy-26122018,40794274",
+                        Type = "Filmy",
+                        IsNew = true
+                    },
+                    new Media
+                    {
+                        Id = 7,
+                        Description = AppStrings.MarianRejewski_Media7,
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Rejewski/media7", "webp")),
+                        ContentIdentifier = "https://m.soundcloud.com/ciecierski/enigma",
+                        Type = "Muzyka",
+                        IsNew = true
+                    },
+                    new Media
+                    {
+                        Id = 8,
+                        Description = AppStrings.MarianRejewski_Media8,
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Rejewski/media8", "webp")),
+                        ContentIdentifier = "https://www.bydgoszcz.pl/aktualnosci/tresc/marian-rejewski-uhonorowany-w-krakowie/",
+                        Type = "WWW",
+                        IsNew = true
+                    },
+                    new Media
+                    {
+                        Id = 9,
+                        Description = AppStrings.MarianRejewski_Media9,
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Rejewski/media9", "webp")),
+                        ContentIdentifier = "https://www.polskieradio.pl/39/156/Artykul/1488658,Kryptolog-Jak-Marian-Rejewski-zlamal-kod-Enigmy",
+                        Type = "WWW",
+                        IsNew = true
+                    }
                 };
             }
         }

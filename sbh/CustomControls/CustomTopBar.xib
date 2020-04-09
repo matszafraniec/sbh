@@ -16,6 +16,7 @@
                 <outlet property="ViewBackground" destination="Ooi-Y1-VSd" id="A1P-KW-Oda"/>
                 <outlet property="ViewContentType" destination="GC9-HP-yqd" id="eQz-qQ-SwS"/>
                 <outlet property="ViewMenuIcon" destination="9VD-AW-5W7" id="aNC-v9-m8e"/>
+                <outlet property="ViewOverlay" destination="GHc-zK-pwp" id="Aca-lG-IYc"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -50,7 +51,7 @@
                                 <constraint firstItem="5hi-nY-F0t" firstAttribute="top" secondItem="9VD-AW-5W7" secondAttribute="top" constant="10" id="ryW-la-Q6g"/>
                             </constraints>
                         </view>
-                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GC9-HP-yqd">
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GC9-HP-yqd" userLabel="ViewContentType">
                             <rect key="frame" x="308.66666666666669" y="0.0" width="98.333333333333314" height="58"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ContentType" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nsr-E4-gfk" userLabel="LabelContentType">
@@ -69,10 +70,17 @@
                                 <constraint firstAttribute="bottom" secondItem="Nsr-E4-gfk" secondAttribute="bottom" id="zqx-Fb-jay"/>
                             </constraints>
                         </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GHc-zK-pwp" userLabel="ViewOverlay">
+                            <rect key="frame" x="0.0" y="0.0" width="298.66666666666669" height="58"/>
+                        </view>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="GC9-HP-yqd" secondAttribute="bottom" id="4nG-KQ-ZyY"/>
                         <constraint firstAttribute="trailing" secondItem="GC9-HP-yqd" secondAttribute="trailing" constant="10" id="81I-gU-pCI"/>
+                        <constraint firstAttribute="bottom" secondItem="GHc-zK-pwp" secondAttribute="bottom" id="8IA-mS-xVD"/>
+                        <constraint firstItem="GC9-HP-yqd" firstAttribute="leading" secondItem="GHc-zK-pwp" secondAttribute="trailing" constant="10" id="Gvo-gF-www"/>
+                        <constraint firstItem="GHc-zK-pwp" firstAttribute="leading" secondItem="Ooi-Y1-VSd" secondAttribute="leading" id="L99-0e-AL0"/>
+                        <constraint firstItem="GHc-zK-pwp" firstAttribute="top" secondItem="Ooi-Y1-VSd" secondAttribute="top" id="Vg5-Fv-jeK"/>
                         <constraint firstItem="GC9-HP-yqd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="m6z-G9-tQm" secondAttribute="trailing" constant="10" id="Z57-8h-u1j"/>
                         <constraint firstItem="GC9-HP-yqd" firstAttribute="top" secondItem="Ooi-Y1-VSd" secondAttribute="top" id="fmw-bF-H9k"/>
                         <constraint firstItem="m6z-G9-tQm" firstAttribute="centerY" secondItem="Ooi-Y1-VSd" secondAttribute="centerY" id="foj-7H-ejp"/>

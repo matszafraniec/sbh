@@ -110,5 +110,21 @@ namespace sbh.CustomControls
 
             return base.HitTest(point, uievent);
         }
+
+        public void SetSideMenuSubHeader(ContentType contentType)
+        {
+            switch(contentType)
+            {
+                case ContentType.Bydgoszcz1945:
+                    LabelSubheader.Text = AppStrings.ContentDescription_Bydgoszcz1945;
+                    break;
+                case ContentType.MarianRejewski:
+                    LabelSubheader.Text = AppStrings.ContentDescription_MarianRejewski;
+                    break;
+                default:
+                    LabelSubheader.Text = AppStrings.ContentDescription_Bydgoszcz1920;
+                    break;
+            }
+        }
     }
 }

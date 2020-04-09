@@ -72,8 +72,17 @@ namespace sbh.CustomControls
         {
             LabelTitle.TextColor = LabelContentType.TextColor = AppColors.NaturalWhite;
             LabelTitle.Font = UIFont.BoldSystemFontOfSize(16);
-            LabelContentType.Font = UIFont.SystemFontOfSize(15);
+            LabelContentType.Font = UIFont.BoldSystemFontOfSize(15);
+            ViewContentType.Layer.CornerRadius = 20;
+
             ViewBackground.BackgroundColor = AppColors.DarkRed;
+
+            ViewOverlay.Alpha = 0.65f;
+            ViewOverlay.BackgroundColor = AppColors.NaturalBlack;
+            ViewOverlay.Hidden = false;
+
+            LabelContentType.Alpha = 0;
+            LabelContentType.Text = "Wybierz treści";
         }
 
         public void SetTitle(string title)
@@ -100,5 +109,14 @@ namespace sbh.CustomControls
             }
             LabelContentType.Text = contentTypeTitle;
         }
+
+        public void ContentTypeSectionAnimation()
+        {
+            Animate(1.5, () =>
+            {
+                LabelContentType.Alpha = 1;
+            });
+        }
+        public void HideContentTypeOverlay() => ViewOverlay.Hidden = true;
     }
 }

@@ -46,6 +46,9 @@ namespace sbh.ViewControllers
 		UIKit.UITextView TextViewDescription { get; set; }
 
 		[Outlet]
+		UIKit.UIView ViewPreviewContentTypeOverlay { get; set; }
+
+		[Outlet]
 		UIKit.UIView ViewSideMenuOverlay { get; set; }
 
 		[Outlet]
@@ -78,6 +81,11 @@ namespace sbh.ViewControllers
 				MainViewWrapper = null;
 			}
 
+			if (MediaContainerView != null) {
+				MediaContainerView.Dispose ();
+				MediaContainerView = null;
+			}
+
 			if (MuseumContainerView != null) {
 				MuseumContainerView.Dispose ();
 				MuseumContainerView = null;
@@ -86,11 +94,6 @@ namespace sbh.ViewControllers
 			if (PhotosContainerView != null) {
 				PhotosContainerView.Dispose ();
 				PhotosContainerView = null;
-			}
-
-			if (MediaContainerView != null) {
-				MediaContainerView.Dispose ();
-				MediaContainerView = null;
 			}
 
 			if (SideMenuControl != null) {
@@ -116,6 +119,11 @@ namespace sbh.ViewControllers
 			if (ViewTopBarOverlay != null) {
 				ViewTopBarOverlay.Dispose ();
 				ViewTopBarOverlay = null;
+			}
+
+			if (ViewPreviewContentTypeOverlay != null) {
+				ViewPreviewContentTypeOverlay.Dispose ();
+				ViewPreviewContentTypeOverlay = null;
 			}
 		}
 	}

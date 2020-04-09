@@ -30,44 +30,44 @@ namespace sbh.ViewControllers
                 {
                     Name = "Krzysztof Drozdowski",
                     Description = "Urodził się 15.03.1985 roku w Bydgoszczy. Historyk, społecznik, działacz na rzecz podniesienia świadomości historycznej w Bydgoszczy i regionie. Członek Towarzystwa Miłośników Miasta Bydgoszczy. Doprowadził do wznowienia przez IPN śledztwa w sprawie fordońskiej Doliny Śmierci.\n\nJest autorem publikacji:\n- Bitwa o Bydgoszcz 1945,\n- Bydgoszcz wita Armię,\n- Graudenz 1945. Ostatnie tchnienie,\n- Bydgoska architektura militarna w latach 1772-1945,\n- Z lotu ptaka: Bydgoszcz na fotografii lotniczej w latach 1911-1945,\n- Tajemnica Doliny Śmierci. Droga do prawdy,\n- Artylerzysta Piłsudskiego Wspomnienia gen. Jana Chmurowicza,\n- Wojenne sekrety Bydgoszczy.\n\nJest również współautorem publikacji:\n- Bitwa o Bydgoszcz 1945, walki, wspomnienia, relacje,\n- 16 Pułk Ułanów Wielkopolskich im. gen. dyw. Gustawa Orlicz-Dreszera 1918-1939,\n- Świat odosobniony. Bydgoska służba penitencjarna w latach 1920-1939.\n\nPonadto opublikował ponad 40 artykułów naukowych i popularnonaukowych.",
-                    ImagePath = "Images/author"
+                    ImagePath = "Images/Authors/author"
                 },
                 new Author
                 {
                     Name = "Sławomir Ciecierski",
                     Description = "Kierownik projektu, programista Java, kompozytor. Wersja aplikacji na Android.",
-                    ImagePath = "Images/developer-stan"
+                    ImagePath = "Images/Authors/developer-stan"
                 },
                 new Author
                 {
                     Name = "Mateusz Szafraniec",
                     Description = "Programista aplikacji mobilnych. Wersja aplikacji na iOS.",
-                    ImagePath = "Images/developer-mat"
+                    ImagePath = "Images/Authors/developer-mat"
                 },
                 new Author
                 {
                     Name = "Konrad Stankiewicz",
-                    ImagePath = "Images/tester-ks"
+                    ImagePath = "Images/Authors/tester-ks"
                 },
                 new Author
                 {
                     Name = "Paweł Cymbaluk",
-                    ImagePath = "Images/tester-pc"
+                    ImagePath = "Images/Authors/tester-pc"
                 },
                 new Author
                 {
                     Name = "Łukasz Kamiński",
-                    ImagePath = "Images/tester-lk"
+                    ImagePath = "Images/Authors/tester-lk"
                 },
                 new Author
                 {
                     Name = "Ewelina Sierżańska",
-                    ImagePath = "Images/tester-es"
+                    ImagePath = "Images/Authors/tester-es"
                 },
                 new Author
                 {
                     Name = "Marcin Hyba",
-                    ImagePath = "Images/tester-mh"
+                    ImagePath = "Images/Authors/tester-mh"
                 }
             };
 

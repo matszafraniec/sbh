@@ -80,5 +80,11 @@
         public static string MarianRejewski_Media8 = "Marian Rejewski uhonorowany w Krakowie";
         public static string MarianRejewski_Media9 = "Audycje Polskiego Radia";
 
+        //ContentType titles
+        public static string ContentDescription_Bydgoszcz1920 = "100 lat Bydgoszczy w Polsce";
+        public static string ContentDescription_Bydgoszcz1945 = "Wyzwolenie Bydgoszczy 1945r.";
+        public static string ContentDescription_MarianRejewski = "Marian Rejewski";
+
+        public static string Main_Introduction = "\n\nAplikacja ma za zadanie przybliżyć ważne wydarzenia z życia Bydgoszczy, które przez lata popadły w zapomnienie. Piękna historia miasta, nietuzinkowe postaci – przyjrzyj się uważnie tym unikalnym zdjęciom, obejrzyj filmy i wysłuchaj muzyki. To wszystko w aplikacji pod nazwą: Sekrety Bydgoskiej Historii. Projekt będzie rozwijał się o kolejne sekrety, więc wróć tu koniecznie.\n \nKrzysztof Drozdowski";
     }
 }

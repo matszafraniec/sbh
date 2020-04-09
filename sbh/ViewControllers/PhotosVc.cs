@@ -99,37 +99,37 @@ namespace sbh.ViewControllers
                     new Photo
                     {
                         Id = 1,
-                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1920_photo1", "webp")),
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Bydgoszcz1920/photo1", "webp")),
                         Description = AppStrings.Bydgoszcz1920_Photo_1
                     },
                     new Photo
                     {
                         Id = 2,
-                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1920_photo2", "webp")),
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Bydgoszcz1920/photo2", "webp")),
                         Description = AppStrings.Bydgoszcz1920_Photo_2
                     },
                     new Photo
                     {
                         Id = 3,
-                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1920_photo3", "webp")),
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Bydgoszcz1920/photo3", "webp")),
                         Description = AppStrings.Bydgoszcz1920_Photo_3
                     },
                     new Photo
                     {
                         Id = 4,
-                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1920_photo4", "webp")),
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Bydgoszcz1920/photo4", "webp")),
                         Description = AppStrings.Bydgoszcz1920_Photo_4
                     },
                     new Photo
                     {
                         Id = 5,
-                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1920_photo5", "webp")),
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Bydgoszcz1920/photo5", "webp")),
                         Description = AppStrings.Bydgoszcz1920_Photo_5
                     },
                     new Photo
                     {
                         Id = 6,
-                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1920_photo6", "webp")),
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Bydgoszcz1920/photo6", "webp")),
                         Description = AppStrings.Bydgoszcz1920_Photo_6,
                     }
                 };
@@ -142,49 +142,49 @@ namespace sbh.ViewControllers
                     new Photo
                     {
                         Id = 1,
-                        Image = UIImage.FromBundle("Images/bydgoszcz1945_photo1"),
+                        Image = UIImage.FromBundle("Images/Bydgoszcz1945/photo1"),
                         Description = AppStrings.Bydgoszcz1945_Photo_1,
                         IsNew = true
                     },
                     new Photo
                     {
                         Id = 2,
-                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1945_photo2", "webp")),
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Bydgoszcz1945/photo2", "webp")),
                         Description = AppStrings.Bydgoszcz1945_Photo_2,
                         IsNew = true
                     },
                     new Photo
                     {
                         Id = 3,
-                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1945_photo3", "webp")),
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Bydgoszcz1945/photo3", "webp")),
                         Description = AppStrings.Bydgoszcz1945_Photo_3,
                         IsNew = true
                     },
                     new Photo
                     {
                         Id = 4,
-                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1945_photo4", "webp")),
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Bydgoszcz1945/photo4", "webp")),
                         Description = AppStrings.Bydgoszcz1945_Photo_4,
                         IsNew = true
                     },
                     new Photo
                     {
                         Id = 5,
-                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1945_photo5", "webp")),
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Bydgoszcz1945/photo5", "webp")),
                         Description = AppStrings.Bydgoszcz1945_Photo_5,
                         IsNew = true
                     },
                     new Photo
                     {
                         Id = 6,
-                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1945_photo6", "webp")),
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Bydgoszcz1945/photo6", "webp")),
                         Description = AppStrings.Bydgoszcz1945_Photo_6,
                         IsNew = true
                     },
                     new Photo
                     {
                         Id = 7,
-                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/bydgoszcz1945_photo7", "webp")),
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Bydgoszcz1945/photo7", "webp")),
                         Description = AppStrings.Bydgoszcz1945_Photo_7,
                         IsNew = true
                     }
@@ -198,49 +198,49 @@ namespace sbh.ViewControllers
                     new Photo
                     {
                         Id = 1,
-                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/rejewski_photo1", "webp")),
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Rejewski/photo1", "webp")),
                         Description = AppStrings.MarianRejewski_Photo_1,
                         IsNew = true
                     },
                     new Photo
                     {
                         Id = 2,
-                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/rejewski_photo2", "webp")),
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Rejewski/photo2", "webp")),
                         Description = AppStrings.MarianRejewski_Photo_2,
                         IsNew = true
                     },
                     new Photo
                     {
                         Id = 3,
-                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/rejewski_photo3", "webp")),
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Rejewski/photo3", "webp")),
                         Description = AppStrings.MarianRejewski_Photo_3,
                         IsNew = true
                     },
                     new Photo
                     {
                         Id = 4,
-                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/rejewski_photo4", "webp")),
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Rejewski/photo4", "webp")),
                         Description = AppStrings.MarianRejewski_Photo_4,
                         IsNew = true
                     },
                     new Photo
                     {
                         Id = 5,
-                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/rejewski_photo5", "webp")),
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Rejewski/photo5", "webp")),
                         Description = AppStrings.MarianRejewski_Photo_5,
                         IsNew = true
                     },
                     new Photo
                     {
                         Id = 6,
-                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/rejewski_photo6", "webp")),
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Rejewski/photo6", "webp")),
                         Description = AppStrings.MarianRejewski_Photo_6,
                         IsNew = true
                     },
                     new Photo
                     {
                         Id = 7,
-                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/rejewski_photo7", "webp")),
+                        Image = imageDecoder.Decode(NSBundle.MainBundle.PathForResource("Images/Rejewski/photo7", "webp")),
                         Description = AppStrings.MarianRejewski_Photo_7,
                         IsNew = true
                     }
