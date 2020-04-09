@@ -70,6 +70,15 @@
         public static string MarianRejewski_Curiosity_7 = "Żonaty (od r. 1934) z Ireną z Lewandowskich, miał syna Andrzeja (zmarłego w wieku 11 lat) oraz córkę Janinę (ur. 1939), magistra matematyki, specjalistę programowania maszyn matematycznych, zamężną za inż. Józefem Sylwestrzakiem. Przypomniane po długich latach zasługi R-ego w rozszyfrowaniu tajemnicy «Enigmy» znalazły wreszcie uznanie badaczy i historyków drugiej wojny światowej, zaliczających go do największych przedstawicieli kryptologii, mających wpływ na przebieg i wydarzenia drugiej wojny światowej. W r. 1985 jego imię nadano szkole i ulicy w Bydgoszczy oraz umieszczono tablicę pamiątkową na domu, w którym mieszkał w Bydgoszczy.";
 
         //Marian Rejewski Media
-        //Dodać opisy do mediów
+        public static string MarianRejewski_Media1 = "Sekret Enigmy";
+        public static string MarianRejewski_Media2 = "Wybitny kryptolog z Bydgoszczy";
+        public static string MarianRejewski_Media3 = "Biografia";
+        public static string MarianRejewski_Media4 = "Mariana Rejewskiego wspomina córka";
+        public static string MarianRejewski_Media5 = "Tajemnica Enigmy";
+        public static string MarianRejewski_Media6 = "Polscy pogromcy Enigmy";
+        public static string MarianRejewski_Media7 = "Enigma";
+        public static string MarianRejewski_Media8 = "Marian Rejewski uhonorowany w Krakowie";
+        public static string MarianRejewski_Media9 = "Audycje Polskiego Radia";
+
     }
 }
