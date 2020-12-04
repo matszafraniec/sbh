@@ -1,7 +1,7 @@
 # Sekrety bydgoskiej historii
 "Secrets of Bydgoszcz history"
 
-Application developed in Xamarin.iOS framework.
+Application developed with Xamarin.iOS.
 
 More info:
 
